@@ -1,0 +1,57 @@
+.albumContainer{
+    width: 95%;
+    margin: 15px auto 15px;
+    border: 2px solid grey;
+    height: 112px;
+}
+
+.albumContainer:last-of-type{
+    margin: 15px auto 5px;
+}
+
+.infoContainer{
+    margin-left: 115px;
+}
+
+@media screen and (max-width: 565px){
+    .album{
+        overflow-x: hidden;
+    }
+    
+    .infoContainer{
+        overflow-x: hidden;
+    }
+    
+    .albumName{
+        white-space: nowrap;
+    }
+
+}
+
+.albumName{
+    margin: 10px 5px 5px 5px;
+}
+
+select{
+    border: red 2px solid;
+    margin: 5px;
+    color: gray;
+    background-color: black;
+    width: 200px;
+    position:relative;
+}
+
+option{
+    color: inherit;
+    background-color: inherit;
+}
+
+audio{
+    margin: 5px;
+}
+
+.albumCover{
+    float: left;
+    margin: 5px;
+    border: 1px white solid;
+}

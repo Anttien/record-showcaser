@@ -1,0 +1,60 @@
+.menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.menu span {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    white-space: nowrap;
+    color: #818181;
+    display: block;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.menu span:hover {
+    color: red;
+}
+
+#button_close {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    cursor: pointer;
+    
+}
+
+#button_menu{
+    border: 2px black solid;
+    background-color: gray;
+    color: black;
+    position:fixed;
+    margin: auto 0;
+    text-align: center;
+    width: 1.5em;
+    height: 1.5em;
+    font-size: 3em;
+    cursor:pointer;
+    transition: 1s;
+}
+
+#button_menu:hover{
+    color: red;
+}
+
+@media screen and (max-height: 450px){
+    .menu {padding-top: 15px;}
+    .menu span {font-size: 1em;}
+}
