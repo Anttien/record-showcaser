@@ -1,9 +1,11 @@
 function getAlbums() {
     var cover = "resources/default-album-artwork.png";
-    var albumName = "Album Name";
+    var albumName = "Demo";
     var tracks = [
-        {name:"Rats",link:"resources/bensound-ukulele.mp3"},
-        {name:"Cirice",link:"resources/bensound-ukulele.mp3"}
+        {name:"Nyt Masentaa",link:"../albums/Stormic - demo/original/01. Nyt Masentaa.mp3"},
+        {name:"Ralli",link:"../albums/Stormic - demo/original/02. Ralli.mp3"},
+        {name:"Survive the Night",link:"../albums/Stormic - demo/original/03. Survive the Night.mp3"},
+        {name:"Tearless",link:"../albums/Stormic - demo/original/04. Tearless.mp3"}
     ]
     addAlbum(albumName,cover,tracks);
 }
@@ -29,13 +31,31 @@ function addAlbum(albumName, coverLink, trackArray){
     infoContainer.appendChild(p);
     
     var select = document.createElement("select");
+    
     select.onchange = function(){
-        console.log(this.value);
+        if(this.value !== "default"){
+            var id = this.value;
+            var mp3link = document.getElementById(id).getAttribute("data-link");
+            var oldAudio = document.getElementById(albumName).parentNode;
+            var source = document.getElementById(albumName);
+            var newAudio = document.createElement("audio");
+            newAudio.setAttribute("controls","");
+            source.setAttribute("src",mp3link);
+            newAudio.appendChild(source);
+            oldAudio.parentNode.replaceChild(newAudio,oldAudio);
+        }
     }
+    
+    var optionDef = document.createElement("option");
+    optionDef.setAttribute("value","default");
+    optionDef.appendChild(document.createTextNode("Select a track"));
+    select.appendChild(optionDef);
     
     for(var track of trackArray){
         var option = document.createElement("option");
         option.setAttribute("value",track.name);
+        option.setAttribute("id",track.name);
+        option.setAttribute("data-link",track.link);
         option.appendChild(document.createTextNode(track.name));
         select.appendChild(option);
     }
@@ -46,33 +66,15 @@ function addAlbum(albumName, coverLink, trackArray){
     
     var audio = document.createElement("audio");
     audio.setAttribute("controls","");
+    
     var source = document.createElement("source");
-    source.setAttribute("id","")
+    source.setAttribute("type","audio/mpeg");
+    source.setAttribute("id",albumName);
     audio.appendChild(source);
+    
     infoContainer.appendChild(audio);
+    
     albumContainer.appendChild(infoContainer);
     albums.appendChild(albumContainer);
     
 }
-
-
-
-/*
-<div class="albumContainer">
-    <img class="cover" src="resources/default-album-artwork.png" width="100" height="100">
-    <div class="infoContainer">
-        <p class="albumName">Album Name</p>
-        <select>
-            <option value="default">Select a track</option>
-            <option value="track1">Track 1</option>
-            <option value="track2">Track 2</option>
-            <option value="track3">Track 3</option>
-            <option value="track4">Track 4</option>
-        </select>
-        <br>
-        <audio controls>
-            <source src="resources/bensound-ukulele.mp3" type="audio/mpeg">
-        </audio>
-    </div>
-</div>
-*/
