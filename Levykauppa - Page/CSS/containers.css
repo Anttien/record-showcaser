@@ -1,0 +1,101 @@
+.innerContainer{
+    width: 95%;
+    margin: 15px auto 15px;
+    border: 2px solid grey;
+    height: 112px;
+}
+
+.innerContainer:last-of-type{
+    margin: 15px auto 5px;
+}
+
+.infoContainer{
+    margin-left: 115px;
+}
+
+.containerName{
+    margin: 10px 5px 5px 5px;
+}
+
+select{
+    border: red 2px solid;
+    margin: 5px;
+    color: gray;
+    background-color: black;
+    width: 200px;
+    position:relative;
+}
+
+select:hover{
+    cursor: pointer;
+}
+
+option{
+    color: inherit;
+    background-color: inherit;
+}
+
+.infoContainer audio{
+    margin: 5px;
+}
+
+.cover{
+    float: left;
+    margin: 5px;
+    border: 1px white solid;
+}
+
+.infoContainer a{
+    text-decoration: none;
+    cursor: default;
+    margin-left: 5px;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+/*Containers for the upload page*/
+.uploadContainer{
+    width: 95%;
+    margin: 15px auto 15px;
+    border: 2px solid grey;
+}
+
+.uploadContainer label{
+    margin: 15px;
+}
+
+.uploadContainer input[type="text"]{
+    background-color: black;
+}
+
+.selectContainer{
+    margin: 10px;
+}
+
+.selectContainer button{
+    background-color: black;
+}
+
+/*Change overflow when screen is too small
+TODO: add overflows to  upload page containers
+*/
+@media screen and (max-width: 565px){
+    .album{
+        overflow-x: hidden;
+    }
+    
+    .artist{
+        overflow-x: hidden;
+    }
+    
+    .infoContainer{
+        overflow-x: hidden;
+    }
+    
+    .albumName{
+        white-space: nowrap;
+    }
+
+}

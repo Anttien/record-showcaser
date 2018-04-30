@@ -1,11 +1,13 @@
 window.onload = init;
-var menuLinks = ["home","albums","about"];
+var pageIdList = ["home","artists","albums","about","artist", "upload"];
 function init() {
     document.getElementById("button_menu").onclick = function() {openMenu();};
     document.getElementById("button_close").onclick = function() {closeMenu();};
     document.getElementById("button_home").onclick = function() {changePage("home");};
+    document.getElementById("button_artists").onclick = function() {changePage("artists");};
     document.getElementById("button_albums").onclick = function() {changePage("albums");};
     document.getElementById("button_about").onclick = function() {changePage("about");};
+    document.getElementById("button_upload").onclick = function() {changePage("upload");};
 }
 
 function openMenu(){
@@ -18,7 +20,7 @@ function closeMenu(){
 
 function changePage(pageId) {
     if(document.getElementById(pageId).classList.contains("invisible")){
-        for(var id of menuLinks){
+        for(var id of pageIdList){
             var elem = document.getElementById(id);
             elem.classList.add("invisible");
         }
