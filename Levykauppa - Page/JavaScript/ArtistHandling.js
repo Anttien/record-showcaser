@@ -10,7 +10,11 @@ function getArtists(){
         }
     }
     
+<<<<<<< HEAD
     xhr.open("GET","PHP/server.php/levykauppa/artists",true);
+=======
+    xhr.open("GET","../server.php/levykauppa/artists",true);
+>>>>>>> 4c606004fcf4dd7d8496c20f2d3cba251afa17fb
     xhr.send();
     /*var cover = "resources/default-album-artwork.png";
     var link = "https://fi-fi.facebook.com/stormicband/";
