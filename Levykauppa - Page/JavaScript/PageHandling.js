@@ -9,7 +9,9 @@ function init() {
     document.getElementById("button_about").onclick = function() {changePage("about");};
     document.getElementById("button_upload").onclick = function() {changePage("upload");};
     
+    getArtists();
     initUpload();
+    getAlbums();
 }
 
 function openMenu(){
