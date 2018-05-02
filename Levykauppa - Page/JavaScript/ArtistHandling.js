@@ -10,7 +10,7 @@ function getArtists(){
         }
     }
     
-    xhr.open("GET","../server.php/levykauppa/artists",true);
+    xhr.open("GET","../server.php/levykauppa/Stormic/Justice For All",true);
     xhr.send();
     /*var cover = "resources/default-album-artwork.png";
     var link = "https://fi-fi.facebook.com/stormicband/";

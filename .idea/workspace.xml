@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf2df61b-c1bc-4908-860f-e0ee06c23499" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.htaccess" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/.htaccess" afterPath="$PROJECT_DIR$/Levykauppa - Page/.htaccess" />
       <change beforePath="$PROJECT_DIR$/Levykauppa - Page/JavaScript/ArtistHandling.js" afterPath="$PROJECT_DIR$/Levykauppa - Page/JavaScript/ArtistHandling.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,8 +52,8 @@
       <file leaf-file-name="server.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="71" column="8" lean-forward="false" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="39" />
+            <state relative-caret-position="306">
+              <caret line="72" column="5" lean-forward="true" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -72,8 +72,8 @@
       <file leaf-file-name="databaseconnector.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/databaseconnector.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-142">
-              <caret line="243" column="15" lean-forward="false" selection-start-line="243" selection-start-column="14" selection-end-line="243" selection-end-column="15" />
+            <state relative-caret-position="361">
+              <caret line="280" column="38" lean-forward="false" selection-start-line="280" selection-start-column="38" selection-end-line="280" selection-end-column="38" />
               <folding>
                 <marker date="1525248259260" expanded="true" signature="2597:2705" ph="CREATE TABLE... artist" />
                 <marker date="1525248259260" expanded="true" signature="2597:2729" ph="CREATE TABLE... artist" />
@@ -104,7 +104,17 @@
         <entry file="file://$PROJECT_DIR$/Levykauppa - Page/JavaScript/ArtistHandling.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="23" />
+              <caret line="12" column="68" lean-forward="false" selection-start-line="12" selection-start-column="68" selection-end-line="12" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Levykauppa - Page/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="20" lean-forward="false" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -149,6 +159,7 @@
         <option value="$PROJECT_DIR$/rest_test.html" />
         <option value="$PROJECT_DIR$/databaseconnector.php" />
         <option value="$PROJECT_DIR$/server.php" />
+        <option value="$PROJECT_DIR$/Levykauppa - Page/index.html" />
         <option value="$PROJECT_DIR$/Levykauppa - Page/JavaScript/ArtistHandling.js" />
       </list>
     </option>
@@ -226,7 +237,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="settings.editor.selected.configurable" value="copyright.filetypes.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -265,12 +276,12 @@
       <workItem from="1525023225378" duration="9857000" />
       <workItem from="1525068348061" duration="9093000" />
       <workItem from="1525178732448" duration="5533000" />
-      <workItem from="1525245269683" duration="4556000" />
+      <workItem from="1525245269683" duration="8131000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45520000" />
+    <option name="totallyTimeSpent" value="49095000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -695,18 +706,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Levykauppa - Page/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/databaseconnector.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-142">
-          <caret line="243" column="15" lean-forward="false" selection-start-line="243" selection-start-column="14" selection-end-line="243" selection-end-column="15" />
+        <state relative-caret-position="361">
+          <caret line="280" column="38" lean-forward="false" selection-start-line="280" selection-start-column="38" selection-end-line="280" selection-end-column="38" />
           <folding>
             <marker date="1525248259260" expanded="true" signature="2597:2705" ph="CREATE TABLE... artist" />
             <marker date="1525248259260" expanded="true" signature="2597:2729" ph="CREATE TABLE... artist" />
@@ -734,8 +737,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="71" column="8" lean-forward="false" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="39" />
+        <state relative-caret-position="306">
+          <caret line="72" column="5" lean-forward="true" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Levykauppa - Page/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="20" lean-forward="false" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -743,7 +754,7 @@
     <entry file="file://$PROJECT_DIR$/Levykauppa - Page/JavaScript/ArtistHandling.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="23" />
+          <caret line="12" column="68" lean-forward="false" selection-start-line="12" selection-start-column="68" selection-end-line="12" selection-end-column="68" />
           <folding />
         </state>
       </provider>
