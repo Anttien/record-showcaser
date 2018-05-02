@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bf2df61b-c1bc-4908-860f-e0ee06c23499" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/databaseconnector.php" afterPath="$PROJECT_DIR$/databaseconnector.php" />
+      <change beforePath="$PROJECT_DIR$/rest_test.html" afterPath="$PROJECT_DIR$/rest_test.html" />
       <change beforePath="$PROJECT_DIR$/server.php" afterPath="$PROJECT_DIR$/server.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,7 +33,7 @@
       <file leaf-file-name="mp3stripper.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mp3stripper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
+            <state relative-caret-position="17">
               <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="46" selection-end-column="48" />
               <folding />
             </state>
@@ -41,8 +43,8 @@
       <file leaf-file-name="mp3file.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mp3file.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="22" />
+            <state relative-caret-position="272">
+              <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -51,8 +53,8 @@
       <file leaf-file-name="server.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="62" column="35" lean-forward="false" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
+            <state relative-caret-position="807">
+              <caret line="94" column="16" lean-forward="false" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -62,7 +64,7 @@
         <entry file="file://$PROJECT_DIR$/rest_test.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="152">
-              <caret line="13" column="67" lean-forward="false" selection-start-line="13" selection-start-column="67" selection-end-line="13" selection-end-column="67" />
+              <caret line="13" column="57" lean-forward="false" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -71,26 +73,29 @@
       <file leaf-file-name="databaseconnector.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/databaseconnector.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="360" column="31" lean-forward="false" selection-start-line="360" selection-start-column="31" selection-end-line="360" selection-end-column="31" />
+            <state relative-caret-position="51">
+              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="32" selection-end-column="15" />
               <folding>
-                <marker date="1525083739594" expanded="true" signature="2529:2728" ph="CREATE TABLE... artist" />
-                <marker date="1525083739594" expanded="true" signature="2754:2768" ph="CREATE TABLE... artist" />
-                <marker date="1525083739594" expanded="true" signature="2754:3034" ph="CREATE TABLE... album" />
-                <marker date="1525083739594" expanded="true" signature="2754:3036" ph="CREATE TABLE... album" />
-                <marker date="1525083739594" expanded="true" signature="3060:3378" ph="CREATE TABLE... track" />
-                <marker date="1525083739594" expanded="true" signature="3880:3954" ph="INSERT INTO artist... " />
-                <marker date="1525083739594" expanded="true" signature="4446:4481" ph="SELECT * FRO... artist" />
-                <marker date="1525083739594" expanded="true" signature="5157:5247" ph="INSERT INTO album... " />
-                <marker date="1525083739594" expanded="true" signature="5833:5936" ph="SELECT album... album" />
-                <marker date="1525083739594" expanded="true" signature="5833:5987" ph="SELECT album... album" />
-                <marker date="1525083739594" expanded="true" signature="5833:5988" ph="SELECT album... album" />
-                <marker date="1525083739594" expanded="true" signature="5833:5989" ph="SELECT * FRO... artist" />
-                <marker date="1525083739594" expanded="true" signature="6768:6877" ph="INSERT INTO track... " />
-                <marker date="1525083739594" expanded="true" signature="7896:8029" ph="SELECT * FRO... track" />
-                <marker date="1525083739594" expanded="true" signature="7952:8029" ph="SELECT * FRO... track" />
-                <marker date="1525083739594" expanded="true" signature="8959:9098" ph="SELECT name,... album" />
-                <marker date="1525083739594" expanded="true" signature="9947:10002" ph="SELECT name,... artist" />
+                <marker date="1525248259260" expanded="true" signature="2597:2705" ph="CREATE TABLE... artist" />
+                <marker date="1525248259260" expanded="true" signature="2597:2729" ph="CREATE TABLE... artist" />
+                <marker date="1525248259260" expanded="true" signature="2597:2780" ph="CREATE TABLE... artist" />
+                <marker date="1525248259260" expanded="true" signature="2806:3078" ph="CREATE TABLE... album" />
+                <marker date="1525248259260" expanded="true" signature="3104:3206" ph="CREATE TABLE... track" />
+                <marker date="1525248259260" expanded="true" signature="3104:3238" ph="CREATE TABLE... track" />
+                <marker date="1525248259260" expanded="true" signature="3104:3270" ph="CREATE TABLE... track" />
+                <marker date="1525248259260" expanded="true" signature="3104:3408" ph="CREATE TABLE... track" />
+                <marker date="1525248259260" expanded="true" signature="3894:3952" ph="INSERT INTO artist... " />
+                <marker date="1525248259260" expanded="true" signature="4428:4463" ph="SELECT * FRO... artist" />
+                <marker date="1525248259260" expanded="true" signature="5154:5236" ph="INSERT INTO album... " />
+                <marker date="1525248259260" expanded="true" signature="5814:5969" ph="SELECT album... album" />
+                <marker date="1525248259260" expanded="true" signature="6757:6852" ph="INSERT INTO track... " />
+                <marker date="1525248259260" expanded="true" signature="7935:8062" ph="SELECT name,... track" />
+                <marker date="1525248259260" expanded="true" signature="9061:9231" ph="SELECT name,... album" />
+                <marker date="1525248259260" expanded="true" signature="10179:10401" ph="SELECT album... album" />
+                <marker date="1525248259260" expanded="true" signature="10880:10992" ph="SELECT name,... artist" />
+                <marker date="1525248259260" expanded="true" signature="11521:11574" ph="SELECT name,... artist" />
+                <marker date="1525248259260" expanded="true" signature="11540:11560" ph="SELECT name,... artist" />
+                <marker date="1525248259260" expanded="true" signature="11540:11574" ph="SELECT name,... artist" />
               </folding>
             </state>
           </provider>
@@ -99,8 +104,8 @@
       <file leaf-file-name="mp3storage.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mp3storage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="24" column="47" lean-forward="true" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+            <state relative-caret-position="408">
+              <caret line="24" column="47" lean-forward="false" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -119,8 +124,14 @@
     <findStrings>
       <find>band</find>
       <find>logo</find>
+      <find>link_to_stripped_mp3</find>
+      <find>not found</find>
       <find>length</find>
     </findStrings>
+    <replaceStrings>
+      <replace>stripped_mp3</replace>
+      <replace>duration</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -134,8 +145,8 @@
         <option value="$PROJECT_DIR$/mp3file.php" />
         <option value="$PROJECT_DIR$/mp3stripper.php" />
         <option value="$PROJECT_DIR$/mp3storage.php" />
-        <option value="$PROJECT_DIR$/server.php" />
         <option value="$PROJECT_DIR$/rest_test.html" />
+        <option value="$PROJECT_DIR$/server.php" />
         <option value="$PROJECT_DIR$/databaseconnector.php" />
       </list>
     </option>
@@ -146,8 +157,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="9" />
     <option name="y" value="108" />
     <option name="width" value="1386" />
@@ -168,8 +182,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -192,6 +204,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -199,6 +213,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="settings.editor.selected.configurable" value="vcs.Subversion.Network" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -221,7 +236,7 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>C:\Users\Hodor\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -236,17 +251,19 @@
       <workItem from="1524649554081" duration="2990000" />
       <workItem from="1525023225378" duration="9857000" />
       <workItem from="1525068348061" duration="9093000" />
+      <workItem from="1525178732448" duration="5533000" />
+      <workItem from="1525245269683" duration="3008000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35431000" />
+    <option name="totallyTimeSpent" value="43972000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2647504" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27231467" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -278,6 +295,144 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/mp3stripper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mp3file.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="3" lean-forward="false" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest_test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="67" lean-forward="false" selection-start-line="13" selection-start-column="67" selection-end-line="13" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/databaseconnector.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5593">
+          <caret line="329" column="19" lean-forward="false" selection-start-line="329" selection-start-column="19" selection-end-line="329" selection-end-column="19" />
+          <folding>
+            <marker date="1525248259260" expanded="true" signature="2597:2705" ph="CREATE TABLE... artist" />
+            <marker date="1525248259260" expanded="true" signature="2597:2729" ph="CREATE TABLE... artist" />
+            <marker date="1525248259260" expanded="true" signature="2597:2780" ph="CREATE TABLE... artist" />
+            <marker date="1525248259260" expanded="true" signature="2806:3078" ph="CREATE TABLE... album" />
+            <marker date="1525248259260" expanded="true" signature="3104:3206" ph="CREATE TABLE... track" />
+            <marker date="1525248259260" expanded="true" signature="3104:3238" ph="CREATE TABLE... track" />
+            <marker date="1525248259260" expanded="true" signature="3104:3270" ph="CREATE TABLE... track" />
+            <marker date="1525248259260" expanded="true" signature="3104:3408" ph="CREATE TABLE... track" />
+            <marker date="1525248259260" expanded="true" signature="3894:3952" ph="INSERT INTO artist... " />
+            <marker date="1525248259260" expanded="true" signature="4428:4463" ph="SELECT * FRO... artist" />
+            <marker date="1525248259260" expanded="true" signature="5154:5236" ph="INSERT INTO album... " />
+            <marker date="1525248259260" expanded="true" signature="5814:5969" ph="SELECT album... album" />
+            <marker date="1525248259260" expanded="true" signature="6757:6852" ph="INSERT INTO track... " />
+            <marker date="1525248259260" expanded="true" signature="7935:8062" ph="SELECT name,... track" />
+            <marker date="1525248259260" expanded="true" signature="9061:9231" ph="SELECT name,... album" />
+            <marker date="1525248259260" expanded="true" signature="10179:10401" ph="SELECT album... album" />
+            <marker date="1525248259260" expanded="true" signature="10880:10992" ph="SELECT name,... artist" />
+            <marker date="1525248259260" expanded="true" signature="11521:11574" ph="SELECT name,... artist" />
+            <marker date="1525248259260" expanded="true" signature="11540:11560" ph="SELECT name,... artist" />
+            <marker date="1525248259260" expanded="true" signature="11540:11574" ph="SELECT name,... artist" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mp3storage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="47" lean-forward="false" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mp3stripper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="46" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mp3file.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="62" column="35" lean-forward="false" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest_test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="67" lean-forward="false" selection-start-line="13" selection-start-column="67" selection-end-line="13" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mp3storage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="47" lean-forward="true" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/databaseconnector.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6120">
+          <caret line="360" column="31" lean-forward="false" selection-start-line="360" selection-start-column="31" selection-end-line="360" selection-end-column="31" />
+          <folding>
+            <marker date="1525248259260" expanded="true" signature="2597:2705" ph="CREATE TABLE... artist" />
+            <marker date="1525248259260" expanded="true" signature="2597:2729" ph="CREATE TABLE... artist" />
+            <marker date="1525248259260" expanded="true" signature="2597:2780" ph="CREATE TABLE... artist" />
+            <marker date="1525248259260" expanded="true" signature="2806:3078" ph="CREATE TABLE... album" />
+            <marker date="1525248259260" expanded="true" signature="3104:3206" ph="CREATE TABLE... track" />
+            <marker date="1525248259260" expanded="true" signature="3104:3238" ph="CREATE TABLE... track" />
+            <marker date="1525248259260" expanded="true" signature="3104:3270" ph="CREATE TABLE... track" />
+            <marker date="1525248259260" expanded="true" signature="3104:3408" ph="CREATE TABLE... track" />
+            <marker date="1525248259260" expanded="true" signature="3894:3952" ph="INSERT INTO artist... " />
+            <marker date="1525248259260" expanded="true" signature="4428:4463" ph="SELECT * FRO... artist" />
+            <marker date="1525248259260" expanded="true" signature="5154:5236" ph="INSERT INTO album... " />
+            <marker date="1525248259260" expanded="true" signature="5814:5969" ph="SELECT album... album" />
+            <marker date="1525248259260" expanded="true" signature="6757:6852" ph="INSERT INTO track... " />
+            <marker date="1525248259260" expanded="true" signature="7935:8062" ph="SELECT name,... track" />
+            <marker date="1525248259260" expanded="true" signature="9061:9231" ph="SELECT name,... album" />
+            <marker date="1525248259260" expanded="true" signature="10179:10401" ph="SELECT album... album" />
+            <marker date="1525248259260" expanded="true" signature="10880:10992" ph="SELECT name,... artist" />
+            <marker date="1525248259260" expanded="true" signature="11521:11574" ph="SELECT name,... artist" />
+            <marker date="1525248259260" expanded="true" signature="11540:11560" ph="SELECT name,... artist" />
+            <marker date="1525248259260" expanded="true" signature="11540:11574" ph="SELECT name,... artist" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mp3stripper.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
@@ -315,23 +470,26 @@
         <state relative-caret-position="2040">
           <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
           <folding>
-            <marker date="1525083739594" expanded="true" signature="2529:2728" ph="CREATE TABLE... artist" />
-            <marker date="1525083739594" expanded="true" signature="2754:2768" ph="CREATE TABLE... artist" />
-            <marker date="1525083739594" expanded="true" signature="2754:3034" ph="CREATE TABLE... album" />
-            <marker date="1525083739594" expanded="true" signature="2754:3036" ph="CREATE TABLE... album" />
-            <marker date="1525083739594" expanded="true" signature="3060:3378" ph="CREATE TABLE... track" />
-            <marker date="1525083739594" expanded="true" signature="3880:3954" ph="INSERT INTO artist... " />
-            <marker date="1525083739594" expanded="true" signature="4446:4481" ph="SELECT * FRO... artist" />
-            <marker date="1525083739594" expanded="true" signature="5157:5247" ph="INSERT INTO album... " />
-            <marker date="1525083739594" expanded="true" signature="5833:5936" ph="SELECT album... album" />
-            <marker date="1525083739594" expanded="true" signature="5833:5987" ph="SELECT album... album" />
-            <marker date="1525083739594" expanded="true" signature="5833:5988" ph="SELECT album... album" />
-            <marker date="1525083739594" expanded="true" signature="5833:5989" ph="SELECT * FRO... artist" />
-            <marker date="1525083739594" expanded="true" signature="6768:6877" ph="INSERT INTO track... " />
-            <marker date="1525083739594" expanded="true" signature="7896:8029" ph="SELECT * FRO... track" />
-            <marker date="1525083739594" expanded="true" signature="7952:8029" ph="SELECT * FRO... track" />
-            <marker date="1525083739594" expanded="true" signature="8959:9098" ph="SELECT name,... album" />
-            <marker date="1525083739594" expanded="true" signature="9947:10002" ph="SELECT name,... artist" />
+            <marker date="1525248259260" expanded="true" signature="2597:2705" ph="CREATE TABLE... artist" />
+            <marker date="1525248259260" expanded="true" signature="2597:2729" ph="CREATE TABLE... artist" />
+            <marker date="1525248259260" expanded="true" signature="2597:2780" ph="CREATE TABLE... artist" />
+            <marker date="1525248259260" expanded="true" signature="2806:3078" ph="CREATE TABLE... album" />
+            <marker date="1525248259260" expanded="true" signature="3104:3206" ph="CREATE TABLE... track" />
+            <marker date="1525248259260" expanded="true" signature="3104:3238" ph="CREATE TABLE... track" />
+            <marker date="1525248259260" expanded="true" signature="3104:3270" ph="CREATE TABLE... track" />
+            <marker date="1525248259260" expanded="true" signature="3104:3408" ph="CREATE TABLE... track" />
+            <marker date="1525248259260" expanded="true" signature="3894:3952" ph="INSERT INTO artist... " />
+            <marker date="1525248259260" expanded="true" signature="4428:4463" ph="SELECT * FRO... artist" />
+            <marker date="1525248259260" expanded="true" signature="5154:5236" ph="INSERT INTO album... " />
+            <marker date="1525248259260" expanded="true" signature="5814:5969" ph="SELECT album... album" />
+            <marker date="1525248259260" expanded="true" signature="6757:6852" ph="INSERT INTO track... " />
+            <marker date="1525248259260" expanded="true" signature="7935:8062" ph="SELECT name,... track" />
+            <marker date="1525248259260" expanded="true" signature="9061:9231" ph="SELECT name,... album" />
+            <marker date="1525248259260" expanded="true" signature="10179:10401" ph="SELECT album... album" />
+            <marker date="1525248259260" expanded="true" signature="10880:10992" ph="SELECT name,... artist" />
+            <marker date="1525248259260" expanded="true" signature="11521:11574" ph="SELECT name,... artist" />
+            <marker date="1525248259260" expanded="true" signature="11540:11560" ph="SELECT name,... artist" />
+            <marker date="1525248259260" expanded="true" signature="11540:11574" ph="SELECT name,... artist" />
           </folding>
         </state>
       </provider>
@@ -373,23 +531,26 @@
         <state relative-caret-position="119">
           <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="18" />
           <folding>
-            <marker date="1525083739594" expanded="true" signature="2529:2728" ph="CREATE TABLE... artist" />
-            <marker date="1525083739594" expanded="true" signature="2754:2768" ph="CREATE TABLE... artist" />
-            <marker date="1525083739594" expanded="true" signature="2754:3034" ph="CREATE TABLE... album" />
-            <marker date="1525083739594" expanded="true" signature="2754:3036" ph="CREATE TABLE... album" />
-            <marker date="1525083739594" expanded="true" signature="3060:3378" ph="CREATE TABLE... track" />
-            <marker date="1525083739594" expanded="true" signature="3880:3954" ph="INSERT INTO artist... " />
-            <marker date="1525083739594" expanded="true" signature="4446:4481" ph="SELECT * FRO... artist" />
-            <marker date="1525083739594" expanded="true" signature="5157:5247" ph="INSERT INTO album... " />
-            <marker date="1525083739594" expanded="true" signature="5833:5936" ph="SELECT album... album" />
-            <marker date="1525083739594" expanded="true" signature="5833:5987" ph="SELECT album... album" />
-            <marker date="1525083739594" expanded="true" signature="5833:5988" ph="SELECT album... album" />
-            <marker date="1525083739594" expanded="true" signature="5833:5989" ph="SELECT * FRO... artist" />
-            <marker date="1525083739594" expanded="true" signature="6768:6877" ph="INSERT INTO track... " />
-            <marker date="1525083739594" expanded="true" signature="7896:8029" ph="SELECT * FRO... track" />
-            <marker date="1525083739594" expanded="true" signature="7952:8029" ph="SELECT * FRO... track" />
-            <marker date="1525083739594" expanded="true" signature="8959:9098" ph="SELECT name,... album" />
-            <marker date="1525083739594" expanded="true" signature="9947:10002" ph="SELECT name,... artist" />
+            <marker date="1525248259260" expanded="true" signature="2597:2705" ph="CREATE TABLE... artist" />
+            <marker date="1525248259260" expanded="true" signature="2597:2729" ph="CREATE TABLE... artist" />
+            <marker date="1525248259260" expanded="true" signature="2597:2780" ph="CREATE TABLE... artist" />
+            <marker date="1525248259260" expanded="true" signature="2806:3078" ph="CREATE TABLE... album" />
+            <marker date="1525248259260" expanded="true" signature="3104:3206" ph="CREATE TABLE... track" />
+            <marker date="1525248259260" expanded="true" signature="3104:3238" ph="CREATE TABLE... track" />
+            <marker date="1525248259260" expanded="true" signature="3104:3270" ph="CREATE TABLE... track" />
+            <marker date="1525248259260" expanded="true" signature="3104:3408" ph="CREATE TABLE... track" />
+            <marker date="1525248259260" expanded="true" signature="3894:3952" ph="INSERT INTO artist... " />
+            <marker date="1525248259260" expanded="true" signature="4428:4463" ph="SELECT * FRO... artist" />
+            <marker date="1525248259260" expanded="true" signature="5154:5236" ph="INSERT INTO album... " />
+            <marker date="1525248259260" expanded="true" signature="5814:5969" ph="SELECT album... album" />
+            <marker date="1525248259260" expanded="true" signature="6757:6852" ph="INSERT INTO track... " />
+            <marker date="1525248259260" expanded="true" signature="7935:8062" ph="SELECT name,... track" />
+            <marker date="1525248259260" expanded="true" signature="9061:9231" ph="SELECT name,... album" />
+            <marker date="1525248259260" expanded="true" signature="10179:10401" ph="SELECT album... album" />
+            <marker date="1525248259260" expanded="true" signature="10880:10992" ph="SELECT name,... artist" />
+            <marker date="1525248259260" expanded="true" signature="11521:11574" ph="SELECT name,... artist" />
+            <marker date="1525248259260" expanded="true" signature="11540:11560" ph="SELECT name,... artist" />
+            <marker date="1525248259260" expanded="true" signature="11540:11574" ph="SELECT name,... artist" />
           </folding>
         </state>
       </provider>
@@ -483,32 +644,24 @@
     <entry file="file://$PROJECT_DIR$/albums/MP3File.php" />
     <entry file="file://$PROJECT_DIR$/mp3file.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mp3stripper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="46" selection-end-column="48" />
+        <state relative-caret-position="272">
+          <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mp3storage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="24" column="47" lean-forward="true" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+        <state relative-caret-position="408">
+          <caret line="24" column="47" lean-forward="false" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.php">
+    <entry file="file://$PROJECT_DIR$/mp3stripper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="62" column="35" lean-forward="false" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
+        <state relative-caret-position="17">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="46" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -516,33 +669,44 @@
     <entry file="file://$PROJECT_DIR$/rest_test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
-          <caret line="13" column="67" lean-forward="false" selection-start-line="13" selection-start-column="67" selection-end-line="13" selection-end-column="67" />
+          <caret line="13" column="57" lean-forward="false" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="807">
+          <caret line="94" column="16" lean-forward="false" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/databaseconnector.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="360" column="31" lean-forward="false" selection-start-line="360" selection-start-column="31" selection-end-line="360" selection-end-column="31" />
+        <state relative-caret-position="51">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="32" selection-end-column="15" />
           <folding>
-            <marker date="1525083739594" expanded="true" signature="2529:2728" ph="CREATE TABLE... artist" />
-            <marker date="1525083739594" expanded="true" signature="2754:2768" ph="CREATE TABLE... artist" />
-            <marker date="1525083739594" expanded="true" signature="2754:3034" ph="CREATE TABLE... album" />
-            <marker date="1525083739594" expanded="true" signature="2754:3036" ph="CREATE TABLE... album" />
-            <marker date="1525083739594" expanded="true" signature="3060:3378" ph="CREATE TABLE... track" />
-            <marker date="1525083739594" expanded="true" signature="3880:3954" ph="INSERT INTO artist... " />
-            <marker date="1525083739594" expanded="true" signature="4446:4481" ph="SELECT * FRO... artist" />
-            <marker date="1525083739594" expanded="true" signature="5157:5247" ph="INSERT INTO album... " />
-            <marker date="1525083739594" expanded="true" signature="5833:5936" ph="SELECT album... album" />
-            <marker date="1525083739594" expanded="true" signature="5833:5987" ph="SELECT album... album" />
-            <marker date="1525083739594" expanded="true" signature="5833:5988" ph="SELECT album... album" />
-            <marker date="1525083739594" expanded="true" signature="5833:5989" ph="SELECT * FRO... artist" />
-            <marker date="1525083739594" expanded="true" signature="6768:6877" ph="INSERT INTO track... " />
-            <marker date="1525083739594" expanded="true" signature="7896:8029" ph="SELECT * FRO... track" />
-            <marker date="1525083739594" expanded="true" signature="7952:8029" ph="SELECT * FRO... track" />
-            <marker date="1525083739594" expanded="true" signature="8959:9098" ph="SELECT name,... album" />
-            <marker date="1525083739594" expanded="true" signature="9947:10002" ph="SELECT name,... artist" />
+            <marker date="1525248259260" expanded="true" signature="2597:2705" ph="CREATE TABLE... artist" />
+            <marker date="1525248259260" expanded="true" signature="2597:2729" ph="CREATE TABLE... artist" />
+            <marker date="1525248259260" expanded="true" signature="2597:2780" ph="CREATE TABLE... artist" />
+            <marker date="1525248259260" expanded="true" signature="2806:3078" ph="CREATE TABLE... album" />
+            <marker date="1525248259260" expanded="true" signature="3104:3206" ph="CREATE TABLE... track" />
+            <marker date="1525248259260" expanded="true" signature="3104:3238" ph="CREATE TABLE... track" />
+            <marker date="1525248259260" expanded="true" signature="3104:3270" ph="CREATE TABLE... track" />
+            <marker date="1525248259260" expanded="true" signature="3104:3408" ph="CREATE TABLE... track" />
+            <marker date="1525248259260" expanded="true" signature="3894:3952" ph="INSERT INTO artist... " />
+            <marker date="1525248259260" expanded="true" signature="4428:4463" ph="SELECT * FRO... artist" />
+            <marker date="1525248259260" expanded="true" signature="5154:5236" ph="INSERT INTO album... " />
+            <marker date="1525248259260" expanded="true" signature="5814:5969" ph="SELECT album... album" />
+            <marker date="1525248259260" expanded="true" signature="6757:6852" ph="INSERT INTO track... " />
+            <marker date="1525248259260" expanded="true" signature="7935:8062" ph="SELECT name,... track" />
+            <marker date="1525248259260" expanded="true" signature="9061:9231" ph="SELECT name,... album" />
+            <marker date="1525248259260" expanded="true" signature="10179:10401" ph="SELECT album... album" />
+            <marker date="1525248259260" expanded="true" signature="10880:10992" ph="SELECT name,... artist" />
+            <marker date="1525248259260" expanded="true" signature="11521:11574" ph="SELECT name,... artist" />
+            <marker date="1525248259260" expanded="true" signature="11540:11560" ph="SELECT name,... artist" />
+            <marker date="1525248259260" expanded="true" signature="11540:11574" ph="SELECT name,... artist" />
           </folding>
         </state>
       </provider>

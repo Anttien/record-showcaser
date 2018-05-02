@@ -6,8 +6,8 @@ $password = "hodorhodor";
 $dbname = "levykauppa";
 $conn = null;
 
-createConnection();
-
+ createConnection();
+//
 //initializeDataBase();
 //addArtist("Stormic", null,"www.suomi24.fi");
 //addArtist("IA");
@@ -15,19 +15,19 @@ createConnection();
 //addAlbum('Stormic', 'Justice For All 2', '2009');
 //addAlbum('IA', 'Justice For All', '2009');
 //getAlbumId('IA', "Justice For All");
-//addTrack("Stormic", 'Justice For All', "ykkonen", 90);
-//addTrack("Stormic", "Justice For All", "dfs", 90);
-//addTrack("Stormic", "Justice For All", "sdfsdg", 90);
-//addTrack("Stormic", "Justice For All", "aasdfsdf", 90);
-//addTrack("Stormic", "Justice For All", "dfhdf", 90);
-//addTrack("Stormic", "Justice For All", "sdfs", 90);
-//addTrack("Stormic", "Justice For All", "ssss", 90);
-//addTrack("Stormic", "Justice For All", "ssss", 90);
-//addTrack("Stormic", "Justice For All", "ssss", 90);
-//addTrack("Stormic", "Justice For All", "ssss", 90);
-//addTrack("Stormic", "Justice For All", "ssss", 90);
-//addTrack("Stormic", "Justice For All", "ssss", 90);
-//addTrack("Stormic", "Justice For All", "ssss", 90);
+//addTrack("Stormic", 'Justice For All', "ykkonen", "00:90");
+//addTrack("Stormic", "Justice For All", "dfs", "00:90");
+//addTrack("Stormic", "Justice For All", "sdfsdg", "00:90");
+//addTrack("Stormic", "Justice For All", "aasdfsdf", "00:90");
+//addTrack("Stormic", "Justice For All", "dfhdf", "00:90");
+//addTrack("Stormic", "Justice For All", "sdfs", "00:90");
+//addTrack("Stormic", "Justice For All", "ssss", "00:90");
+//addTrack("Stormic", "Justice For All", "ssss", "00:90");
+//addTrack("Stormic", "Justice For All", "ssss", "00:90");
+//addTrack("Stormic", "Justice For All", "ssss", "00:90");
+//addTrack("Stormic", "Justice For All", "ssss", "00:90");
+//addTrack("Stormic", "Justice For All", "ssss", "00:90");
+//addTrack("Stormic", "Justice For All", "ssss", "00:90");
 //getAlbumsOfArtist("Stormic");
 //getTracksOfAlbum('Stormic', 'Justice For All');
 //getArtists();
@@ -88,8 +88,8 @@ function initializeDataBase() {
     (
       id INT NOT NULL AUTO_INCREMENT,
       name VARCHAR(75) NOT NULL,    
-      link_to_logo VARCHAR(200),
-      link_to_homepage VARCHAR(200),
+      logo VARCHAR(200),
+      homepage VARCHAR(200),
       PRIMARY KEY (id)
     );";
 
@@ -98,7 +98,7 @@ function initializeDataBase() {
       id INT NOT NULL AUTO_INCREMENT,
       name VARCHAR(75) NOT NULL,
       release_year INT NOT NULL,
-      link_to_cover_image VARCHAR(200),
+      cover_image VARCHAR(200),
       artist_id INT NOT NULL,
       PRIMARY KEY (id),
       FOREIGN KEY (artist_id) REFERENCES artist(id)
@@ -108,9 +108,9 @@ function initializeDataBase() {
     (
       id INT NOT NULL AUTO_INCREMENT,
       name VARCHAR(75) NOT NULL,
-      link_to_original_mp3 VARCHAR(75),
-      link_to_stripped_mp3 VARCHAR(75),
-      length VARCHAR(8) NOT NULL,
+      original_mp3 VARCHAR(75),
+      stripped_mp3 VARCHAR(75),
+      duration VARCHAR(8) NOT NULL,
       album_id INT NOT NULL,
       PRIMARY KEY (id),
       FOREIGN KEY (album_id) REFERENCES album(id)
@@ -131,13 +131,13 @@ function initializeDataBase() {
 }
 
 
-function addArtist($name, $link_to_logo=null, $link_to_homepage=null) {
+function addArtist($name, $logo=null, $homepage=null) {
     createConnection();
     global $conn;
 
     // prepare and bind
-    $stmt = $conn->prepare("INSERT INTO artist (name, link_to_logo, link_to_homepage) VALUES (?, ?, ?)");
-    if ($stmt->bind_param("sss", $name, $link_to_logo, $link_to_homepage)) {
+    $stmt = $conn->prepare("INSERT INTO artist (name, logo, homepage) VALUES (?, ?, ?)");
+    if ($stmt->bind_param("sss", $name, $logo, $homepage)) {
         echo('<br>');
         echo("Added artist '" . $name . "' to the database.");
     } else {
@@ -165,7 +165,7 @@ function getArtistId($name) {
     $stmt->execute();
 
     $result = $stmt->get_result();
-    if($result->num_rows === 0) exit('No rows');
+    if($result->num_rows === 0) return ('Artist id not found');
     while($row = $result->fetch_assoc()) {
         $ids[] = $row['id'];
     }
@@ -173,21 +173,21 @@ function getArtistId($name) {
 
     $conn->close();
 
-    echo('<br>');
-    echo("Searched for artist '" . $name . "' id from the database. ");
-    echo("It was ". $ids[0]);
-    echo('<br>');
+//    echo('<br>');
+//    echo("Searched for artist '" . $name . "' id from the database. ");
+//    echo("It was ". $ids[0]);
+//    echo('<br>');
     return $ids[0];
 }
 
-function addAlbum($artist_name, $album_name, $release_year=null, $link_to_cover_image=null) {
+function addAlbum($artist_name, $album_name, $release_year=null, $cover_image=null) {
     $artist_id = getArtistId($artist_name);
     createConnection();
     global $conn;
 
     // prepare and bind
-    $stmt = $conn->prepare("INSERT INTO album (name, release_year, link_to_cover_image, artist_id) VALUES (?, ?, ?, ?)");
-    if ($stmt->bind_param("sisi", $album_name, $release_year, $link_to_cover_image, $artist_id)) {
+    $stmt = $conn->prepare("INSERT INTO album (name, release_year, cover_image, artist_id) VALUES (?, ?, ?, ?)");
+    if ($stmt->bind_param("sisi", $album_name, $release_year, $cover_image, $artist_id)) {
         echo('<br>');
         echo("Added album '" . $album_name . "' to the database.");
     } else {
@@ -218,7 +218,7 @@ function getAlbumId($artist_name, $album_name) {
     $stmt->execute();
 
     $result = $stmt->get_result();
-    if($result->num_rows === 0) exit('No rows');
+    if($result->num_rows === 0) return ('Album id not found');
     while($row = $result->fetch_assoc()) {
         $ids[] = $row['id'];
     }
@@ -226,21 +226,21 @@ function getAlbumId($artist_name, $album_name) {
 
     $conn->close();
 
-    echo('<br>');
-    echo("Searched for album '" . $album_name . "' of the artist '" . $artist_name . "' id from the database. ");
-    echo("It was ". $ids[0]);
-    echo('<br>');
+//    echo('<br>');
+//    echo("Searched for album '" . $album_name . "' of the artist '" . $artist_name . "' id from the database. ");
+//    echo("It was ". $ids[0]);
+//    echo('<br>');
     return $ids[0];
 }
 
-function addTrack($artist_name, $album_name, $track_name, $length, $link_to_original_mp3=null, $link_to_stripped_mp3=null) {
+function addTrack($artist_name, $album_name, $track_name, $duration, $original_mp3=null, $stripped_mp3=null) {
     $album_id = getAlbumId($artist_name, $album_name);
     createConnection();
     global $conn;
 
     // prepare and bind
-    $stmt = $conn->prepare("INSERT INTO track (name, link_to_original_mp3, link_to_stripped_mp3, length, album_id) VALUES (?, ?, ?, ?, ?)");
-    if ($stmt->bind_param("ssssi", $track_name, $link_to_original_mp3, $link_to_stripped_mp3, $length, $album_id)) {
+    $stmt = $conn->prepare("INSERT INTO track (name, original_mp3, stripped_mp3, duration, album_id) VALUES (?, ?, ?, ?, ?)");
+    if ($stmt->bind_param("ssssi", $track_name, $original_mp3, $stripped_mp3, $duration, $album_id)) {
         echo('<br>');
         echo("Added track '" . $track_name . "' of the album '" . $album_name . " to the database.");
     } else {
@@ -259,20 +259,23 @@ function addAllTracks($artist_name, $album_name, $tracks) {
         addTrack($artist_name,
             $album_name,
             $tracks['name'],
-            $track['length'],
-            $track['link_to_original_mp3'],
-            $track['link_to_stripped_mp3']);
+            $track['duration'],
+            $track['original_mp3'],
+            $track['stripped_mp3']);
     }
 }
 
 function getTracksOfAlbum($artist_name, $album_name) {
     $album_id = getAlbumId($artist_name, $album_name);
+    if (!is_int($album_id)) {
+        return ("Album " . $album_name . " not found");
+    }
     $tracks = array();
     createConnection();
     global $conn;
 
     // prepare and bind
-    $stmt = $conn->prepare("SELECT name, link_to_stripped_mp3, length
+    $stmt = $conn->prepare("SELECT name, stripped_mp3, duration
                             FROM track
                             WHERE track.album_id = ?;");
     $stmt->bind_param("i", $album_id);
@@ -281,37 +284,37 @@ function getTracksOfAlbum($artist_name, $album_name) {
     $stmt->execute();
 
     $result = $stmt->get_result();
-    if($result->num_rows === 0) exit('No rows');
+    if($result->num_rows === 0) return ("No tracks found for album '" . $album_name . "'.");
     while($row = $result->fetch_assoc()) {
         array_push($tracks, $row);
 //        $tracks[$row['id']]['name'] = $row['name'];
-//        $tracks[$row['id']]['link_to_stripped_mp3'] = $row['link_to_stripped_mp3'];
-//        $tracks[$row['id']]['length'] = $row['length'];
+//        $tracks[$row['id']]['stripped_mp3'] = $row['stripped_mp3'];
+//        $tracks[$row['id']]['duration'] = $row['duration'];
     }
     $stmt->close();
-
     $conn->close();
 
-    echo('<br>');
-    echo("Fetched the album '" . $album_name . "' of the artist '" . $artist_name . "' tracks from the database. ");
-    echo("They were ");
-    echo json_encode($tracks);
-    echo('<br>');
+//    echo('<br>');
+//    echo("Fetched the album '" . $album_name . "' of the artist '" . $artist_name . "' tracks from the database. ");
+//    echo("They were ");
+//    echo json_encode($tracks);
+//    echo('<br>');
     return ($tracks);
 
 }
 
-function getAlbumsOfArtist($artist_name) {
+function getAlbumsOfArtist($artist_name, $order_by = 'release_year') {
     $artist_id = getArtistId($artist_name);
     $albums = array();
     createConnection();
     global $conn;
 
     // prepare and bind
-    $stmt = $conn->prepare("SELECT name, release_year, link_to_cover_image
+    $stmt = $conn->prepare("SELECT name, release_year, cover_image
                             FROM album
-                            WHERE album.artist_id = ?;");
-    $stmt->bind_param("i", $artist_id);
+                            WHERE album.artist_id = ?
+                            ORDER BY ?;");
+    $stmt->bind_param("is", $artist_id, $order_by);
 
     // execute
     $stmt->execute();
@@ -319,21 +322,73 @@ function getAlbumsOfArtist($artist_name) {
     $result = $stmt->get_result();
     if($result->num_rows === 0) exit('No rows');
     while($row = $result->fetch_assoc()) {
+        $row['tracks'] = getTracksOfAlbum($artist_name, $row['name']);
         array_push($albums, $row);
+
 //        $albums[$row['id']]['name'] = $row['name'];
 //        $albums[$row['id']]['release_year'] = $row['release_year'];
-//        $albums[$row['id']]['link_to_cover_image'] = $row['link_to_cover_image'];
+//        $albums[$row['id']]['cover_image'] = $row['cover_image'];
     }
     $stmt->close();
-
     $conn->close();
 
-    echo('<br>');
-    echo("Fetched album names of the artist '" . $artist_name . "' from the database. ");
-    echo("They were ");
-    echo json_encode($albums);
-    echo('<br>');
+//    echo('<br>');
+//    echo("Fetched album names of the artist '" . $artist_name . "' from the database. ");
+//    echo("They were ");
+//    echo json_encode($albums);
+//    echo('<br>');
     return $albums;
+}
+
+function getAlbums($order_by = release_year) {
+    $albums = array();
+    createConnection();
+    global $conn;
+
+    // prepare and bind
+    $stmt = $conn->prepare("SELECT album.name, artist.name AS 'artist_name', release_year, cover_image
+                            FROM album, artist
+                            WHERE album.artist_id = artist.id
+                            ORDER BY ?;");
+    $stmt->bind_param("s", $order_by);
+
+    // execute
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+    if($result->num_rows === 0) return ('No albums found.');
+    while($row = $result->fetch_assoc()) {
+        array_push($albums, $row);
+    }
+    $stmt->close();
+    $conn->close();
+    return $albums;
+}
+
+function getArtist($artist_name) {
+    $artist = array();
+    createConnection();
+    global $conn;
+
+    // prepare and bind
+    $stmt = $conn->prepare("SELECT name, logo, homepage 
+                            FROM artist 
+                            WHERE name = ?;");
+    $stmt->bind_param("s", $artist_name);
+
+    // execute
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+    if($result->num_rows === 0) return ('No artist named ' . $artist_name . ' found.');
+    $artist = $result->fetch_assoc();
+
+    $stmt->close();
+    $conn->close();
+
+    $artist['albums'] = getAlbumsOfArtist($artist_name, "release_year");
+
+    return $artist;
 }
 
 function getArtists() {
@@ -342,7 +397,7 @@ function getArtists() {
     global $conn;
 
     // prepare and bind
-    $result = $conn->query("SELECT name, link_to_logo, link_to_homepage FROM artist");
+    $result = $conn->query("SELECT name, logo, homepage FROM artist ORDER BY name");
 
     while($row = $result->fetch_assoc()) {
         array_push($artists, $row);
@@ -353,11 +408,10 @@ function getArtists() {
 
     // echo('<br>');
     // echo("Fetched artists from the database. ");
-    //echo("They were ");
-
-    //echo('<br>');
+    // echo("They were ");
+    // echo('<br>');
     // return $artists;
 
-    echo json_encode($artists);
+    return $artists;
 }
 ?>
