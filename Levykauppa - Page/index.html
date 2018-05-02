@@ -7,6 +7,7 @@
         <script src="JavaScript/AlbumHandling.js" type="text/javascript"></script>
         <script src="JavaScript/PageHandling.js" type="text/javascript"></script>
         <script src="JavaScript/ArtistHandling.js" type="text/javascript"></script>
+        <script src="JavaScript/Upload.js" type="text/javascript"></script>
     </head>
 
     <body>
@@ -52,28 +53,13 @@
         
         <div class="main" id="upload">
             <h1>Upload album</h1>
-            <div class="uploadContainer">
+            <div class="uploadContainer" id="uploadContainer">
                 <div class="selectContainer">
                     <span>Artist:</span>
-                    <label><input name="test" type="radio"><input type="text"></label>
-                    <label><input name="test" type="radio">
-                        <select>
-                            <option value="Stormic">Stormic</option>
-                            <option value="IA">IA</option>
-                        </select>
+                    <label><input name="artistRadio" type="radio" id="rSelect">
+                        <select id="selectArtists"></select>
                     </label>
-                </div>
-                <div class="selectContainer">
-                    <input name="albumName" type="text" placeholder="Album name">
-                    <button>Add Track</button>
-                </div>
-                <div class="selectContainer">
-                    <input name="trackName1" type="text" placeholder="Track name">
-                    <input name="trackFile1" type="file">
-                </div>
-                <div class="selectContainer">
-                    <input name="trackName1" type="text" placeholder="Track name">
-                    <input name="trackFile1" type="file">
+                    <label><input name="artistRadio" type="radio" id="rText"><input type="text" placeholder="New Artist" id="textArtists"></label>
                 </div>
             </div>
         </div>

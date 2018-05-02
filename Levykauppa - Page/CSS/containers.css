@@ -66,8 +66,16 @@ a:hover{
     margin: 15px;
 }
 
+.uploadContainer label > select{
+    margin: 0px;
+}
+
 .uploadContainer input[type="text"]{
     background-color: black;
+}
+
+.uploadContainer input[type="file"]{
+    margin-left: 5px;
 }
 
 .selectContainer{
@@ -76,6 +84,7 @@ a:hover{
 
 .selectContainer button{
     background-color: black;
+    margin-left: 5px;
 }
 
 /*Change overflow when screen is too small
