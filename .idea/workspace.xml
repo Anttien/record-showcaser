@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf2df61b-c1bc-4908-860f-e0ee06c23499" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.htaccess" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/databaseconnector.php" afterPath="$PROJECT_DIR$/databaseconnector.php" />
-      <change beforePath="$PROJECT_DIR$/rest_test.html" afterPath="$PROJECT_DIR$/rest_test.html" />
-      <change beforePath="$PROJECT_DIR$/server.php" afterPath="$PROJECT_DIR$/server.php" />
+      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/JavaScript/ArtistHandling.js" afterPath="$PROJECT_DIR$/Levykauppa - Page/JavaScript/ArtistHandling.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,8 +52,8 @@
       <file leaf-file-name="server.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="807">
-              <caret line="94" column="16" lean-forward="false" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="16" />
+            <state relative-caret-position="442">
+              <caret line="71" column="8" lean-forward="false" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -70,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="databaseconnector.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="databaseconnector.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/databaseconnector.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="32" selection-end-column="15" />
+            <state relative-caret-position="-142">
+              <caret line="243" column="15" lean-forward="false" selection-start-line="243" selection-start-column="14" selection-end-line="243" selection-end-column="15" />
               <folding>
                 <marker date="1525248259260" expanded="true" signature="2597:2705" ph="CREATE TABLE... artist" />
                 <marker date="1525248259260" expanded="true" signature="2597:2729" ph="CREATE TABLE... artist" />
@@ -101,11 +100,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mp3storage.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mp3storage.php">
+      <file leaf-file-name="ArtistHandling.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Levykauppa - Page/JavaScript/ArtistHandling.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="47" lean-forward="false" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+            <state relative-caret-position="204">
+              <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -127,6 +126,8 @@
       <find>link_to_stripped_mp3</find>
       <find>not found</find>
       <find>length</find>
+      <find>duration</find>
+      <find>&lt;</find>
     </findStrings>
     <replaceStrings>
       <replace>stripped_mp3</replace>
@@ -146,8 +147,9 @@
         <option value="$PROJECT_DIR$/mp3stripper.php" />
         <option value="$PROJECT_DIR$/mp3storage.php" />
         <option value="$PROJECT_DIR$/rest_test.html" />
-        <option value="$PROJECT_DIR$/server.php" />
         <option value="$PROJECT_DIR$/databaseconnector.php" />
+        <option value="$PROJECT_DIR$/server.php" />
+        <option value="$PROJECT_DIR$/Levykauppa - Page/JavaScript/ArtistHandling.js" />
       </list>
     </option>
   </component>
@@ -161,7 +163,7 @@
     <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="9" />
     <option name="y" value="108" />
     <option name="width" value="1386" />
@@ -200,6 +202,17 @@
               <item name="albums" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Stormic - demo" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="Levykauppa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Levykauppa" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Levykauppa - Page" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Levykauppa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Levykauppa" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Levykauppa - Page" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="JavaScript" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -213,7 +226,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="settings.editor.selected.configurable" value="vcs.Subversion.Network" />
+    <property name="settings.editor.selected.configurable" value="copyright.filetypes.JavaScript" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -252,15 +265,15 @@
       <workItem from="1525023225378" duration="9857000" />
       <workItem from="1525068348061" duration="9093000" />
       <workItem from="1525178732448" duration="5533000" />
-      <workItem from="1525245269683" duration="3008000" />
+      <workItem from="1525245269683" duration="4556000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43972000" />
+    <option name="totallyTimeSpent" value="45520000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27231467" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -674,18 +687,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.php">
+    <entry file="file://$PROJECT_DIR$/Levykauppa - Page/JavaScript/AlbumHandling.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="807">
-          <caret line="94" column="16" lean-forward="false" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="16" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Levykauppa - Page/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/databaseconnector.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="32" selection-end-column="15" />
+        <state relative-caret-position="-142">
+          <caret line="243" column="15" lean-forward="false" selection-start-line="243" selection-start-column="14" selection-end-line="243" selection-end-column="15" />
           <folding>
             <marker date="1525248259260" expanded="true" signature="2597:2705" ph="CREATE TABLE... artist" />
             <marker date="1525248259260" expanded="true" signature="2597:2729" ph="CREATE TABLE... artist" />
@@ -708,6 +729,22 @@
             <marker date="1525248259260" expanded="true" signature="11540:11560" ph="SELECT name,... artist" />
             <marker date="1525248259260" expanded="true" signature="11540:11574" ph="SELECT name,... artist" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="71" column="8" lean-forward="false" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Levykauppa - Page/JavaScript/ArtistHandling.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
