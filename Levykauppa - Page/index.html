@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="main.css" type="text/css" rel="stylesheet">
-        <link href="menu.css" type="text/css" rel="stylesheet">
-        <link href="album.css" type="text/css" rel="stylesheet">
-        <script src="PageHandling.js" type="text/javascript"></script>
-        <script src="AlbumHandling.js" type="text/javascript"></script>
+        <link href="CSS/main.css" type="text/css" rel="stylesheet">
+        <link href="CSS/menu.css" type="text/css" rel="stylesheet">
+        <link href="CSS/containers.css" type="text/css" rel="stylesheet">
+        <script src="JavaScript/AlbumHandling.js" type="text/javascript"></script>
+        <script src="JavaScript/PageHandling.js" type="text/javascript"></script>
+        <script src="JavaScript/ArtistHandling.js" type="text/javascript"></script>
+        <script src="JavaScript/Upload.js" type="text/javascript"></script>
     </head>
 
     <body>
@@ -13,8 +15,10 @@
         <div class="menu" id="menu">
             <span class="button_close" id="button_close">&times;</span>
             <span id="button_home">&#8962 Home</span>
+            <span id="button_artists">&#127897 Artists</span>
             <span id="button_albums">&#9737 Albums</span>
             <span id="button_about">&#128712 About</span>
+            <span id="button_upload">&#8683 Upload</span>
         </div>
         
         <div class="main invisible" id="home">
@@ -24,33 +28,18 @@
             </p>
         </div>
         
-        <div class="main" id="albums">
+        <div class="main invisible" id="albums">
             <h1>Albums</h1>
             <p>
                 This is the album page
             </p>
-            
-            
-            <div class="albumContainer">
-                <img class="albumCover" src="resources/default-album-artwork.png" width="100" height="100">
-                <div class="infoContainer">
-                    <p class="albumName">Album Name</p>
-                    <select>
-                        <option value="default">Select a track</option>
-                        <option value="track1">Track 1</option>
-                        <option value="track2">Track 2</option>
-                        <option value="track3">Track 3</option>
-                        <option value="track4">Track 4</option>
-                    </select>
-                    <br>
-                    <audio controls>
-                        <source src="resources/bensound-ukulele.mp3" type="audio/mpeg">
-                    </audio>
-                </div>
-            </div>
-            
-            
-            
+        </div>
+        
+        <div class="main invisible" id="artists">
+            <h1>Artists</h1>
+            <p>
+                Here come the bands
+            </p>
         </div>
         
         <div class="main invisible" id="about">
@@ -60,6 +49,24 @@
                 <br>
                 Default music by Bensound: <a href="https://www.bensound.com">www.bensound.com</a>
             </p>
+        </div>
+        
+        <div class="main" id="upload">
+            <h1>Upload album</h1>
+            <div class="uploadContainer" id="uploadContainer">
+                <div class="selectContainer">
+                    <span>Artist:</span>
+                    <label><input name="artistRadio" type="radio" id="rSelect">
+                        <select id="selectArtists"></select>
+                    </label>
+                    <label><input name="artistRadio" type="radio" id="rText"><input type="text" placeholder="New Artist" id="textArtists"></label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main invisible" id="artist">
+            <h1 id="artistTitle">ARTIST(name)</h1>
+            <p>Here go the single artist's albums</p>
         </div>
         
     </body>
