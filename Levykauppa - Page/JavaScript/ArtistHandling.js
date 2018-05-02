@@ -40,7 +40,7 @@ function addArtist(artistName, coverLink, artistPageLink){
     
     var pp = document.createElement("p");
     var pa = document.createElement("a");
-    pa.setAttribute("href",artistPageLink);
+    pa.setAttribute("href","http://" + artistPageLink);
     pa.setAttribute("class","artistPageLink");
     pa.innerHTML = "Artist's Page";
     pp.appendChild(pa);
@@ -52,7 +52,7 @@ function addArtist(artistName, coverLink, artistPageLink){
     aa.setAttribute("class", "artistAlbumLink");
     aa.innerHTML = "Albums";
     aa.onclick = function () {
-        getArtist();
+        getArtist(artistName);
         changePage("artist");
     }
     ap.appendChild(aa);
