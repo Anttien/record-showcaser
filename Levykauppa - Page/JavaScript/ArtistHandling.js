@@ -2,6 +2,7 @@ function getArtists(){
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange= function() {
         if(xhr.readyState === 4 && xhr.status === 200){
+            console.log(xhr.responseText);
             var artists = JSON.parse(xhr.responseText);
             for(artist of artists) {
                 addArtist(artist.name, artist.logo, artist.homepage);
