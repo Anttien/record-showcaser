@@ -1,7 +1,19 @@
 function getArtists(){
-    var cover = "resources/default-album-artwork.png";
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange= function() {
+        if(xhr.readyState === 4 && xhr.status === 200){
+            var artists = JSON.parse(xhr.responseText);
+            for(artist of artists) {
+                addArtist(artist.name, artist.logo, artist.homepage);
+            }
+        }
+    }
+    
+    xhr.open("GET","server.php/levykauppa/artists",true);
+    xhr.send();
+    /*var cover = "resources/default-album-artwork.png";
     var link = "https://fi-fi.facebook.com/stormicband/";
-    addArtist("Stormic", cover, link)
+    addArtist("Stormic", cover, link)*/
     
 }
 

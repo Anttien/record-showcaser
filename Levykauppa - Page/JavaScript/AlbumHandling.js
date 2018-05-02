@@ -1,6 +1,18 @@
 //Here go the albums
 function getAlbums() {
-    var cover = "resources/default-album-artwork.png";
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange= function() {
+        if(xhr.readyState === 4 && xhr.status === 200){
+            var albums = JSON.parse(xhr.responseText);
+            for(album of albums) {
+                addAlbum(album.name, album.artist_name, album.cover_image, album.tracks);
+            }
+        }
+    }
+    
+    xhr.open("GET","server.php/levykauppa/albums",true);
+    xhr.send();
+    /*var cover = "resources/default-album-artwork.png";
     var albumName = "Demo";
     var artist = "Stormic";
     var tracks = [
@@ -8,12 +20,26 @@ function getAlbums() {
         {name:"Ralli",link:"../albums/Stormic - demo/original/02. Ralli.mp3", duration: "03:07"},
         {name:"Survive the Night",link:"../albums/Stormic - demo/original/03. Survive the Night.mp3", duration: "04:22"},
         {name:"Tearless",link:"../albums/Stormic - demo/original/04. Tearless.mp3", duration: "04:06"}
-    ];
-    addAlbum(albumName,artist,cover,tracks);
+    ];*/
+    //addAlbum(albumName,artist,cover,tracks);
 }
 
-function getArtist() {
-    var cover = "resources/default-album-artwork.png";
+function getArtist(artistName) {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange= function() {
+        if(xhr.readyState === 4 && xhr.status === 200){
+            var artist = JSON.parse(xhr.responseText);
+            var albums = artist.albums;
+            clearArtistAlbums();
+            for(album of albums) {
+                addAlbum(album.name, album.artist_name, album.cover_image, album.tracks, true);
+            }
+        }
+    }
+    
+    xhr.open("GET","server.php/levykauppa/"+artistName,true);
+    xhr.send();
+    /*var cover = "resources/default-album-artwork.png";
     var albumName = "Demo";
     var artist = "Stormic";
     var tracks = [
@@ -21,9 +47,9 @@ function getArtist() {
         {name:"Ralli",link:"../albums/Stormic - demo/original/02. Ralli.mp3", duration: "03:07"},
         {name:"Survive the Night",link:"../albums/Stormic - demo/original/03. Survive the Night.mp3", duration: "04:22"},
         {name:"Tearless",link:"../albums/Stormic - demo/original/04. Tearless.mp3", duration: "04:06"}
-    ];
-    clearArtistAlbums();
-    addAlbum(albumName,artist,cover,tracks, true);
+    ];*/
+    //clearArtistAlbums();
+    //addAlbum(albumName,artist,cover,tracks, true);
 }
 
 //Adds the album into the page
@@ -83,7 +109,7 @@ function addAlbum(albumName, artistName, coverLink, trackArray, toArtistPage){
         var option = document.createElement("option");
         option.setAttribute("value",track.name);
         option.setAttribute("id",track.name);
-        option.setAttribute("data-link",track.link);
+        option.setAttribute("data-link",track.stripped_mp3);
         option.setAttribute("data-duration",track.duration);
         option.appendChild(document.createTextNode(track.name));
         select.appendChild(option);
