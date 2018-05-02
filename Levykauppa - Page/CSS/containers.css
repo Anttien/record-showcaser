@@ -106,5 +106,14 @@ TODO: add overflows to  upload page containers
     .albumName{
         white-space: nowrap;
     }
-
+    
+}
+@media screen and (max-width: 692px){
+    .uploadContainer label{
+        overflow-x: hidden;
+        white-space: nowrap;
+    }
+    .uploadContainer{
+        overflow-x: hidden;
+    }
 }

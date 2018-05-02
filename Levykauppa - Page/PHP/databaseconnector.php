@@ -2,12 +2,12 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "hodorhodor";
+$password = "kekko1996";
 $dbname = "levykauppa";
 $conn = null;
 
  createConnection();
-//
+
 //initializeDataBase();
 //addArtist("Stormic", null,"www.suomi24.fi");
 //addArtist("IA");

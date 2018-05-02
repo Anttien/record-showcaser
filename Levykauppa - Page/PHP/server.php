@@ -26,6 +26,7 @@ function getResource() {
     $resource = explode('/', $resource_string);
     array_shift($resource);
     array_shift($resource);
+    array_shift($resource);
 
     return $resource;
 }

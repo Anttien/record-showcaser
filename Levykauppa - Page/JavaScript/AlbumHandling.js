@@ -3,6 +3,7 @@ function getAlbums() {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange= function() {
         if(xhr.readyState === 4 && xhr.status === 200){
+            console.log(xhr.responseText);
             var albums = JSON.parse(xhr.responseText);
             for(album of albums) {
                 addAlbum(album.name, album.artist_name, album.cover_image, album.tracks);
@@ -10,7 +11,7 @@ function getAlbums() {
         }
     }
     
-    xhr.open("GET","server.php/levykauppa/albums",true);
+    xhr.open("GET","PHP/server.php/levykauppa/albums",true);
     xhr.send();
     /*var cover = "resources/default-album-artwork.png";
     var albumName = "Demo";
@@ -28,6 +29,7 @@ function getArtist(artistName) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange= function() {
         if(xhr.readyState === 4 && xhr.status === 200){
+            console.log(xhr.responseText);
             var artist = JSON.parse(xhr.responseText);
             var albums = artist.albums;
             clearArtistAlbums();
@@ -37,7 +39,7 @@ function getArtist(artistName) {
         }
     }
     
-    xhr.open("GET","server.php/levykauppa/"+artistName,true);
+    xhr.open("GET","PHP/server.php/levykauppa/"+artistName,true);
     xhr.send();
     /*var cover = "resources/default-album-artwork.png";
     var albumName = "Demo";
@@ -104,7 +106,7 @@ function addAlbum(albumName, artistName, coverLink, trackArray, toArtistPage){
     optionDefault.setAttribute("value","default");
     optionDefault.appendChild(document.createTextNode("Select a track"));
     select.appendChild(optionDefault);
-    
+    console.log(trackArray);
     for(var track of trackArray){
         var option = document.createElement("option");
         option.setAttribute("value",track.name);
