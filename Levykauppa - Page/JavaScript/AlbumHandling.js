@@ -3,33 +3,32 @@ function getAlbums() {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange= function() {
         if(xhr.readyState === 4 && xhr.status === 200){
-            console.log(xhr.responseText);
             var albums = JSON.parse(xhr.responseText);
-            for(album of albums) {
+            for(var album of albums) {
+                console.log(album);
                 addAlbum(album.name, album.artist_name, album.cover_image, album.tracks);
             }
         }
     }
     
-    xhr.open("GET","PHP/server.php/levykauppa/albums",true);
+    xhr.open("GET","/PHP/server.php/levykauppa/albums",true);
     xhr.send();
     /*var cover = "resources/default-album-artwork.png";
     var albumName = "Demo";
     var artist = "Stormic";
     var tracks = [
-        {name:"Nyt Masentaa",link:"../albums/Stormic - demo/original/01. Nyt Masentaa.mp3", duration: "04:18"},
-        {name:"Ralli",link:"../albums/Stormic - demo/original/02. Ralli.mp3", duration: "03:07"},
-        {name:"Survive the Night",link:"../albums/Stormic - demo/original/03. Survive the Night.mp3", duration: "04:22"},
-        {name:"Tearless",link:"../albums/Stormic - demo/original/04. Tearless.mp3", duration: "04:06"}
-    ];*/
-    //addAlbum(albumName,artist,cover,tracks);
+        {name:"Nyt Masentaa",stripped_mp3:"../resources/albums/Stormic - demo/original/01. Nyt Masentaa.mp3", duration: "04:18"},
+        {name:"Ralli",stripped_mp3:"../resources/albums/Stormic - demo/original/02. Ralli.mp3", duration: "03:07"},
+        {name:"Survive the Night",stripped_mp3:"../resources/albums/Stormic - demo/original/03. Survive the Night.mp3", duration: "04:22"},
+        {name:"Tearless",stripped_mp3:"../resources/albums/Stormic - demo/original/04. Tearless.mp3", duration: "04:06"}
+    ];
+    addAlbum(albumName,artist,cover,tracks);*/
 }
 
 function getArtist(artistName) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange= function() {
         if(xhr.readyState === 4 && xhr.status === 200){
-            console.log(xhr.responseText);
             var artist = JSON.parse(xhr.responseText);
             var albums = artist.albums;
             clearArtistAlbums();
@@ -68,11 +67,17 @@ function addAlbum(albumName, artistName, coverLink, trackArray, toArtistPage){
     var albumContainer = document.createElement("div");
     albumContainer.setAttribute("class","innerContainer");
     
+    
     var img = document.createElement("img");
     img.setAttribute("width","100");
     img.setAttribute("height","100");
     img.setAttribute("class","cover");
-    img.setAttribute("src",coverLink);
+    if(coverLink != null){
+        img.setAttribute("src",coverLink);
+    }else{
+        img.setAttribute("src","resources/default-album-artwork.png");
+    }
+    
     albumContainer.appendChild(img);
     
     var infoContainer = document.createElement("div");

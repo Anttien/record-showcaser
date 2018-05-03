@@ -82,9 +82,16 @@ function addTrackUploader() {
     var fileInput = document.createElement("input");
     fileInput.setAttribute("name","trackFile");
     fileInput.setAttribute("type","file");
+    var deleteButton = document.createElement("button");
+    deleteButton.innerHTML = "&#128465";
+    deleteButton.onclick = function() {
+        var toDelete = this.parentElement;
+        toDelete.parentElement.removeChild(toDelete);
+    }
     
     container.appendChild(textInput);
     container.appendChild(fileInput);
+    container.appendChild(deleteButton);
     document.getElementById("uploadContainer").appendChild(container);
 }
 
@@ -99,6 +106,17 @@ function validate() {
     if(!tracks) return false;
     var album = {name:albumName,artist:artistName,tracks:tracks};
     console.log(album);
+    
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange= function() {
+        if(xhr.readyState === 4 && xhr.status === 200){
+            //OK
+        }else{
+            //NOK
+        }
+    }
+    xhr.open("POST","PHP/server.php/levykauppa/albums",true);
+    xhr.send(JSON.stringify(album));
     
 }
 
