@@ -3,10 +3,11 @@
 $servername = "localhost";
 $username = "root";
 $password = "kekko1996";
+$password = "hodorhodor";
 $dbname = "levykauppa";
 $conn = null;
 
- createConnection();
+createConnection();
 
 //initializeDataBase();
 //addArtist("Stormic", null,"www.suomi24.fi");
