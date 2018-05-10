@@ -6,26 +6,27 @@ include("mp3file.php"); // For calculating the duration
 
 class mp3stripper {
 
+
     public function stripmp3($artist, $album) {
 
         // The root directory for the album
-        $directory = 'albums/'.$artist.' - '.$album;
+        $directory = '../resources/albums/'.$artist.'/'.$album;
 
         // The directory for the original mp3's
-        $directory_origin = $directory.'/original/';
+        $directory_original = $directory.'/original/';
 
         // Scan the directory for files and folders and put their names to array
-        $filelist = scandir($directory_origin);
+        $filelist = scandir($directory_original);
 
         // Remove the . and .. from the beginning of the array
         array_splice($filelist, 0, 2);
 
         // Remove folders and other than mp3's from filelist
         foreach ($filelist as $file => $link) {
-            if(is_dir($directory_origin.'/'.$link)) {
+            if(is_dir($directory_original.'/'.$link)) {
                 unset($filelist[$file]);
             }
-            elseif (pathinfo($directory_origin.'/'.$link, PATHINFO_EXTENSION) != 'mp3') {
+            elseif (pathinfo($directory_original.'/'.$link, PATHINFO_EXTENSION) != 'mp3') {
                 unset($filelist[$file]);
             }
         }
@@ -40,7 +41,7 @@ class mp3stripper {
          * and add the stripped mp3 to the '/stripped' folder
         */
         foreach ($filelist as $file) {
-            $path = $directory_origin . "/" . $file;
+            $path = $directory_original . "/" . $file;
 
             // Calculate duration of the mp3 file
             $mp3file = new MP3File($path);

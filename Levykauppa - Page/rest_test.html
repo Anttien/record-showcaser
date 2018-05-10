@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>form upload</title>
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+<form
+        id="testForm"
+        action="php/server.php/levykauppa/artist/album2"
+        method="post"
+        enctype="multipart/form-data"
+>
+    <input type="file" name="file" multiple><br>
+    <input type="submit">
+</form>
+</body>
+</html>
+
+<script>
+    document
+        .querySelector('#testForm')
+        .addEventListener('submit', function processForm(e) {
+            e.preventDefault();
+            console.log('processForm');
+
+            var form = e.currentTarget;
+            var multipleFiles = form.querySelector('input[type=file]');
+
+            // only if there is something to do ...
+            if (multipleFiles.files.length) {
+                var submit = form.querySelector('[type=submit]');
+                var request = new XMLHttpRequest();
+                var formData = Array.prototype.reduce.call(
+                    multipleFiles.files,
+                    function (formData, file, i) {
+                        formData.append(multipleFiles.name + i, file);
+                        return formData;
+                    },
+                    new FormData()
+                );
+                formData.append("Hei", "hei");
+
+                // avoid multiple repeated uploads
+                // (histeric clicks on slow connection)
+                submit.disabled = true;
+
+                // do the request using form info
+                request.open(form.method, form.action);
+                // want to distinguish from non-JS submits?
+                request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+                request.send(formData);
+
+                request.onload = function(e) {
+                    // clean up the form eventually
+                    console.log('Request Status', request.status);
+                    // make this form usable again
+                    submit.disabled = false;
+
+                    // enable the submit on abort/error too
+                    // to make the user able to retry
+
+                    console.log(request.responseText);
+                };
+            }
+        })
+    ;
+</script>
+
+
+
+</body>
+</html>

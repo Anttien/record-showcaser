@@ -1,15 +1,9 @@
 <?php
 
 include ("mp3stripper.php"); // Strips all the mp3 files in folder
-// include ("mp3storage.php"); // The database demo version
 include ("databaseconnector.php"); // The mysql database connection
 
 $mp3stripper = new mp3stripper();
-// $mp3storage = new mp3storage();
-// $artist = 'Stormic';
-// $album = 'Demo';
-// $mp3storage->registerAlbum($artist, $album, $mp3stripper->stripmp3($artist, $album));
-// echo $mp3storage->getAlbumsInJson();
 
 # URI parser helper functions
 # ---------------------------
@@ -75,7 +69,7 @@ if ($resource[0]=="levykauppa") {
 
     /*
      * Returns all albums in the database, in ascending order by album name
-     * Example: 'server.php/levykauppa/artists'
+     * Example: 'server.php/levykauppa/albums'
      */
     else if ($request_method=="GET" && $resource[1]=="albums") {
         echo json_encode(getAlbums("album.name"));
@@ -98,8 +92,81 @@ if ($resource[0]=="levykauppa") {
         }
     }
 
+    /*
+     * Creates the directories for album and artist to the server if they doesn't exist.
+     * Moves the uploaded mp3's there and creates stripped versions of them.
+     * Registers the album and artist info to the database.
+     *
+     * Example: 'server.php/Stormic/Justice For All'
+     */
+    else if ($request_method=="POST" && isset($resource[1]) && isset($resource[2])) {
+        $target_path_root = "../resources/albums/";
 
-    else if ($request_method=="GET" && is_int(getArtistId($resource[1]))) {
+        $artist = $resource[1];
+        $album = $resource[2];
+
+        // Create folder for the artist
+        if (!file_exists($target_path_root . '/'.$artist)) {
+            mkdir($target_path_root . '/'.$artist);
+        }
+
+        // Create folder for the album
+        if (!file_exists($target_path_root . '/'.$artist.'/'.$album)) {
+            mkdir($target_path_root . '/'.$artist.'/'.$album);
+        }
+
+        // Create folder for the original mp3
+        if (!file_exists($target_path_root . '/'.$artist.'/'.$album)."/original/") {
+            mkdir($target_path_root . '/'.$artist.'/'.$album."/original/");
+        }
+
+        // Register artist and album to the database
+        if (is_int(getArtistId($artist))) {
+            addArtist($artist);
+            addAlbum($artist, $album);
+        } elseif (is_int(getAlbumId($artist, $album))) {
+            addAlbum($artist, $album);
+        }
+
+        // Move each file to the right folders and register tracks to database
+        // Handle mp3's and other(image) files differently.
+        $target_path_original = "../resources/albums/".$artist."/".$album."/original/";
+        $target_path_stripped = "../resources/albums/".$artist."/".$album."/stripped/";
+        $target_path_images = "../resources/albums/".$artist."/".$album."/";
+
+        foreach ($_FILES as $file) {
+            var_dump($file);
+
+            if (substr($file['name'], -3) == 'mp3') {
+                $target_path = $target_path_original . basename( $file['name']);
+
+                if(move_uploaded_file($file['tmp_name'], $target_path)) {
+                    $target_path_stripped_mp3 = $target_path_stripped . basename( $file['name']);
+                    $mp3file = new MP3File($target_path);
+                    $duration = $mp3file->getDuration();
+                    $track_length = $mp3file::formatTime($duration);
+                    addTrack($artist, $album, $file['name'], $track_length, $target_path, $target_path_stripped_mp3);
+                    echo "The mp3 file ".  basename( $file['name']). " has been uploaded";
+                } else {
+                    echo "There was an error uploading the file, please try again!";
+                }
+
+            } else {
+                $target_path = $target_path_images . basename( $file['name']);
+                if(move_uploaded_file($file['tmp_name'], $target_path)) {
+                    echo "The file ".  basename( $file['name']). " has been uploaded";
+                } else{
+                    echo "There was an error uploading the file, please try again!";
+                }
+            }
+        }
+
+        // Strip the mp3's
+        $mp3stripper->stripmp3($artist, $album);
+
+        // For testing purposes:
+        var_dump($_FILES);
+        var_dump($_POST);
 
     }
     else {
