@@ -25,12 +25,14 @@ function getAlbums() {
     addAlbum(albumName,artist,cover,tracks);*/
 }
 
+//Request's a single artist by name
 function getArtist(artistName) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange= function() {
         if(xhr.readyState === 4 && xhr.status === 200){
             var artist = JSON.parse(xhr.responseText);
             var albums = artist.albums;
+            document.getElementById("artistTitle").innerHTML = artist.name;
             clearArtistAlbums();
             for(album of albums) {
                 addAlbum(album.name, album.artist_name, album.cover_image, album.tracks, true);
@@ -53,12 +55,11 @@ function getArtist(artistName) {
     //addAlbum(albumName,artist,cover,tracks, true);
 }
 
-//Adds the album into the page
+//Adds the album(div) into either the album or the artist's page
 function addAlbum(albumName, artistName, coverLink, trackArray, toArtistPage){
     if(toArtistPage){
         var albums = document.getElementById("artist");
         var nameString = albumName;
-        document.getElementById("artistTitle").innerHTML = artistName;
     }else{
         var albums = document.getElementById("albums");  
         var nameString = artistName + " - " + albumName;
@@ -145,11 +146,12 @@ function addAlbum(albumName, artistName, coverLink, trackArray, toArtistPage){
     albums.appendChild(albumContainer); 
 }
 
+//Clears all albums from the artist page
 function clearArtistAlbums(){
     var parent = document.getElementById("artist");
     var children = parent.childNodes;
     for(child of children){
-        if(child.firstChild != null && child.getAttribute("class") == "albumContainer"){
+        if(child.firstChild != null && child.getAttribute("class") == "innerContainer"){
             parent.removeChild(child);
         }
     }

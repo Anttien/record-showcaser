@@ -64,6 +64,8 @@ a:hover{
 
 .uploadContainer label{
     margin: 15px;
+    overflow-x: hidden;
+    white-space: nowrap;
 }
 
 .uploadContainer label > select{
@@ -87,6 +89,7 @@ a:hover{
     margin-left: 5px;
 }
 
+
 /*Change overflow when screen is too small
 TODO: add overflows to  upload page containers
 */
@@ -109,10 +112,6 @@ TODO: add overflows to  upload page containers
     
 }
 @media screen and (max-width: 692px){
-    .uploadContainer label{
-        overflow-x: hidden;
-        white-space: nowrap;
-    }
     .uploadContainer{
         overflow-x: hidden;
     }
