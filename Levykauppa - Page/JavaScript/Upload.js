@@ -233,7 +233,7 @@ function validateArtist(){
             return false;
         }
     }
-    return {name:artistName, isNew:radioSelect.checked};
+    return {name:artistName, isNew:radioText.checked};
 }
 
 function validateCovers(isNewArtist){
@@ -250,6 +250,8 @@ function validateCovers(isNewArtist){
                 return false;
             }
         }
+    }else{
+        artistFile = undefined;
     }
     
     if(albumFile != undefined){
