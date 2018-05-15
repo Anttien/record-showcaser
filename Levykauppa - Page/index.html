@@ -53,19 +53,21 @@
             </div>
 
             <div class="main invisible" id="upload">
-                <h1>Upload album</h1>
-                <div class="uploadContainer" id="uploadContainer">
-                    <div class="selectContainer">
-                        <span>Artist:</span>
-                        <label><input name="artistRadio" type="radio" id="rSelect">
-                            <select id="selectArtists"></select>
-                        </label>
-                        <label>
-                            <input name="artistRadio" type="radio" id="rText">
-                            <input type="text" placeholder="New Artist" id="textArtists">
-                        </label>
+                <form name="uploadAlbum" enctype="multipart/form-data">
+                    <h1>Upload album</h1>
+                    <div class="uploadContainer" id="uploadContainer">
+                        <div class="selectContainer">
+                            <span>Artist:</span>
+                            <label><input name="artistRadio" type="radio" id="rSelect">
+                                <select id="selectArtists"></select>
+                            </label>
+                            <label>
+                                <input name="artistRadio" type="radio" id="rText">
+                                <input type="text" placeholder="New Artist" id="textArtists">
+                            </label>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
 
             <div class="main invisible" id="artist">

@@ -59,6 +59,8 @@ $parameters = getParameters();
 
 if ($resource[0]=="levykauppa") {
 
+
+
     /*
      * Returns all artists in the database, in ascending order by name
      * Example: 'server.php/levykauppa/artists'
@@ -99,11 +101,14 @@ if ($resource[0]=="levykauppa") {
      *
      * Example: 'server.php/Stormic/Justice For All'
      */
-    else if ($request_method=="POST" && isset($resource[1]) && isset($resource[2])) {
+//    else if ($request_method=="POST" && isset($resource[1]) && isset($resource[2])) {
+    else if ($request_method=="POST") {
+
         $target_path_root = "../resources/albums/";
 
-        $artist = $resource[1];
-        $album = $resource[2];
+        $artist = $_POST['artist'];
+        $album = $_POST['album'];
+
 
         // Create folder for the artist
         if (!file_exists($target_path_root . '/'.$artist)) {
@@ -120,19 +125,26 @@ if ($resource[0]=="levykauppa") {
             mkdir($target_path_root . '/'.$artist.'/'.$album."/original/");
         }
 
+
+
         // Register artist and album to the database
-        if (is_int(getArtistId($artist))) {
+
+        $target_path_images = "../resources/albums/".$artist."/".$album."/";
+
+        if (!is_int(getArtistId($artist))) {
             addArtist($artist);
-            addAlbum($artist, $album);
-        } elseif (is_int(getAlbumId($artist, $album))) {
-            addAlbum($artist, $album);
+            addAlbum($artist, $album, $target_path_images . $_FILES['albumCover']['name']);
+        } elseif (!is_int(getAlbumId($artist, $album))) {
+            addAlbum($artist, $album, $target_path_images . $_FILES['albumCover']['name']);
+        } else {
+            echo "Album already exists";
+            return;
         }
 
         // Move each file to the right folders and register tracks to database
         // Handle mp3's and other(image) files differently.
         $target_path_original = "../resources/albums/".$artist."/".$album."/original/";
         $target_path_stripped = "../resources/albums/".$artist."/".$album."/stripped/";
-        $target_path_images = "../resources/albums/".$artist."/".$album."/";
 
         foreach ($_FILES as $file) {
             var_dump($file);
@@ -145,7 +157,7 @@ if ($resource[0]=="levykauppa") {
                     $mp3file = new MP3File($target_path);
                     $duration = $mp3file->getDuration();
                     $track_length = $mp3file::formatTime($duration);
-                    addTrack($artist, $album, $file['name'], $track_length, $target_path, $target_path_stripped_mp3);
+                    addTrack($artist, $album, rtrim($file['name'], ".mp3"), $track_length, $target_path, $target_path_stripped_mp3);
                     echo "The mp3 file ".  basename( $file['name']). " has been uploaded";
                 } else {
                     echo "There was an error uploading the file, please try again!";

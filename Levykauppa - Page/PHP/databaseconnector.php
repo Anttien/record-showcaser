@@ -181,7 +181,7 @@ function getArtistId($name) {
     return $ids[0];
 }
 
-function addAlbum($artist_name, $album_name, $release_year=null, $cover_image=null) {
+function addAlbum($artist_name, $album_name, $cover_image=null, $release_year=0) {
     $artist_id = getArtistId($artist_name);
     createConnection();
     global $conn;
@@ -200,7 +200,6 @@ function addAlbum($artist_name, $album_name, $release_year=null, $cover_image=nu
     $stmt->execute();
     $stmt->close();
     $conn->close();
-
 }
 
 function getAlbumId($artist_name, $album_name) {
@@ -321,6 +320,10 @@ function getAlbumsOfArtist($artist_name, $order_by = 'release_year') {
     $stmt->execute();
 
     $result = $stmt->get_result();
+
+    $stmt->close();
+    $conn->close();
+
     if($result->num_rows === 0) exit('No rows');
     while($row = $result->fetch_assoc()) {
         $row['tracks'] = getTracksOfAlbum($artist_name, $row['name']);
@@ -330,8 +333,7 @@ function getAlbumsOfArtist($artist_name, $order_by = 'release_year') {
 //        $albums[$row['id']]['release_year'] = $row['release_year'];
 //        $albums[$row['id']]['cover_image'] = $row['cover_image'];
     }
-    $stmt->close();
-    $conn->close();
+
 
 //    echo('<br>');
 //    echo("Fetched album names of the artist '" . $artist_name . "' from the database. ");
@@ -342,7 +344,9 @@ function getAlbumsOfArtist($artist_name, $order_by = 'release_year') {
 }
 
 function getAlbums($order_by = release_year) {
+
     $albums = array();
+    $album = array();
     createConnection();
     global $conn;
 
@@ -357,12 +361,28 @@ function getAlbums($order_by = release_year) {
     $stmt->execute();
 
     $result = $stmt->get_result();
-    if($result->num_rows === 0) return ('No albums found.');
-    while($row = $result->fetch_assoc()) {
-        array_push($albums, $row);
-    }
+
     $stmt->close();
     $conn->close();
+
+    if($result->num_rows === 0) return ('No albums found.');
+    while($row = $result->fetch_assoc()) {
+
+//        array_push($album, $row['name']);
+//        array_push($album, $row['artist_name']);
+//        array_push($album, $row['relase_year']);
+//        array_push($album, getTracksOfAlbum($row['artist_name'], $row['name']));
+//        array_push($album, $row['cover_image']);
+
+        $album['name'] = $row['name'];
+        $album['artist_name'] = $row['artist_name'];
+        $album['release_year'] = $row['release_year'];
+        $album['tracks'] = getTracksOfAlbum($row['artist_name'], $row['name']);
+        $album['cover_image'] = $row['cover_image'];
+
+        array_push($albums, $album);
+    }
+
     return $albums;
 }
 

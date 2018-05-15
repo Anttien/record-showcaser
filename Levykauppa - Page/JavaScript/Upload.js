@@ -66,8 +66,56 @@ function addAlbumNamer(isNewArtist) {
     
     var uploadButton = document.createElement("button");
     uploadButton.innerHTML = "Upload Album";
-    uploadButton.onclick = function() {validate();};
-    
+    uploadButton.setAttribute("type","submit");
+    // uploadButton.onclick = function() {validate();};
+
+    // Here's the contents of validate function
+
+        var form = document.forms.namedItem("uploadAlbum");
+            form.addEventListener('submit', function(ev) {
+
+                var artistInfo = validateArtist();
+                var artistName = artistInfo.name;
+                var isNew = artistInfo.isNew;
+                if(!artistName) return false;
+                var albumName = validateAlbum();
+                if(!albumName) return false;
+                var tracks = validateTracks();
+                if(!tracks) return false;
+                var covers = validateCovers(isNew);
+                if(!covers) return false;
+                var album = {name:albumName,artist:artistName,tracks:tracks,albumCover:covers.albumCover,artistCover:covers.artistCover};
+                console.log(album);
+
+                formData = new FormData();
+
+                for(track of tracks){
+                    formData.append(track.name, track.file, track.name  + ".mp3");
+                }
+
+                formData.append("artist", artistName);
+                formData.append("album", albumName);
+                formData.append("albumCover", covers.albumCover, "albumcover.png");
+                formData.append("artistCover", covers.artistCover, "artistcover.png");
+
+                console.log(formData);
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        console.log(xhr.responseText);
+                        alert("The new album has been uploaded successfully");
+                    } else if (xhr.readyState === 4) {
+                        console.log(xhr.responseText);
+                        alert("There was an error uploading your album. Error code: " + xhr.state);
+                    }
+                }
+                xhr.open("POST", "PHP/server.php/levykauppa", true);
+                xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+                xhr.send(formData);
+                ev.preventDefault();
+        }, false);
+
     var uploadButtonShowing = false;
     button.onclick = function (){
         addTrackUploader();
@@ -75,6 +123,7 @@ function addAlbumNamer(isNewArtist) {
             container.appendChild(uploadButton);
             uploadButtonShowing = true;
         }
+        return false;
     };
     
     var imageUploadContainer = document.createElement("div");
@@ -162,19 +211,31 @@ function validate() {
     if(!covers) return false;
     var album = {name:albumName,artist:artistName,tracks:tracks,albumCover:covers.albumCover,artistCover:covers.artistCover};
     console.log(album);
+
+    var form = document.forms.namedItem("#uploadAlbum");
+    // var multipleFiles = form.querySelector('input[type=file]');
+
+    formData = new FormData(form);
+
+    console.log(formData);
     
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange= function() {
         if(xhr.readyState === 4 && xhr.status === 200){
+            console.log(xhr.responseText);
             alert("The new album has been uploaded successfully");
-        }else{
+        }else if (xhr.readyState === 4) {
+            console.log(xhr.responseText);
             alert("There was an error uploading your album. Error code: " + xhr.state);
         }
     }
-    xhr.open("POST","PHP/server.php/levykauppa/albums",true);
-    xhr.send(JSON.stringify(album));
-    
+    xhr.open("POST","PHP/server.php/levykauppa",true);
+    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhr.send(formData);
+    // xhr.send(JSON.stringify(album));
+    return false;
 }
+
 
 function validateTracks(){
     var trackElements = document.getElementsByName("trackContainer");
