@@ -23,36 +23,43 @@ function initUpload() {
         }
     }
     
-    var names = getArtistNames();
+    var names = [];
     var select = document.getElementById("selectArtists");
-    if(names.length === 0){
-        var defOption = document.createElement("option");
-        defOption.setAttribute("value", "default");
-        defOption.innerHTML = "No artists to choose from";
-        select.appendChild(defOption);
-    }else{
-        var defOption = document.createElement("option");
-        defOption.setAttribute("value", "default");
-        defOption.innerHTML = "Select an artist";
-        select.appendChild(defOption);
-        
-        for(name of names){
-            var option = document.createElement("option");
-            option.setAttribute("value", name);
-            option.innerHTML = name;
-            select.appendChild(option);
+    
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange= function() {
+        if(xhr.readyState === 4 && xhr.status === 200){
+            var artists = JSON.parse(xhr.responseText);
+            for(artist of artists) {
+                names.push(artist.name);
+            };
+            
+            if(names.length === 0){
+                var defOption = document.createElement("option");
+                defOption.setAttribute("value", "default");
+                defOption.innerHTML = "No artists to choose from";
+                select.appendChild(defOption);
+            }else{
+                var defOption = document.createElement("option");
+                defOption.setAttribute("value", "default");
+                defOption.innerHTML = "Select an artist";
+                select.appendChild(defOption);
+
+                for(name of names){
+                    var option = document.createElement("option");
+                    option.setAttribute("value", name);
+                    option.innerHTML = name;
+                    select.appendChild(option);
+                }
+            }
+            
         }
     }
+    xhr.open("GET","../PHP/server.php/levykauppa/artists",true);
+    xhr.send();
+    
 }
 
-function getArtistNames(){
-    var artistsJSON = [{artistName:"Stormic"},{artistName:"IA"}];
-    var names = [];
-    for(obj of artistsJSON){
-        names.push(obj.artistName);
-    }
-    return names;
-}
 
 function addAlbumNamer(isNewArtist) {
     var container = document.createElement("div");
@@ -67,9 +74,6 @@ function addAlbumNamer(isNewArtist) {
     var uploadButton = document.createElement("button");
     uploadButton.innerHTML = "Upload Album";
     uploadButton.setAttribute("type","submit");
-    // uploadButton.onclick = function() {validate();};
-
-    // Here's the contents of validate function
 
         var form = document.forms.namedItem("uploadAlbum");
             form.addEventListener('submit', function(ev) {

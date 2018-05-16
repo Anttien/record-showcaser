@@ -5,7 +5,11 @@ function init() {
     document.getElementById("button_close").onclick = function() {closeMenu();};
     //document.getElementById("button_home").onclick = function() {changePage("home");};
     document.getElementById("button_artists").onclick = function() {changePage("artists");};
-    document.getElementById("button_albums").onclick = function() {changePage("albums");};
+    document.getElementById("button_albums").onclick = function() {
+        clearAlbumsAlbums();
+        getAlbums();
+        changePage("albums");
+    };
     document.getElementById("button_about").onclick = function() {changePage("about");};
     document.getElementById("button_upload").onclick = function() {changePage("upload");};
     

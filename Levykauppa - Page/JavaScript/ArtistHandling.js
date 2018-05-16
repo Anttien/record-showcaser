@@ -11,9 +11,6 @@ function getArtists(){
     
     xhr.open("GET","../PHP/server.php/levykauppa/artists",true);
     xhr.send();
-    /*var cover = "resources/default-album-artwork.png";
-    var link = "https://fi-fi.facebook.com/stormicband/";
-    addArtist("Stormic", cover, link)*/
     
 }
 

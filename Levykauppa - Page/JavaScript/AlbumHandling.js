@@ -4,10 +4,12 @@ function getAlbums() {
     xhr.onreadystatechange= function() {
         if(xhr.readyState === 4 && xhr.status === 200){
             var albums = JSON.parse(xhr.responseText);
-            for(var album of albums) {
-                console.log(album);
-                addAlbum(album.name, album.artist_name, album.cover_image, album.tracks);
+            if(albums != "No albums found."){
+                for(var album of albums) {
+                    addAlbum(album.name, album.artist_name, album.cover_image, album.tracks);
+                }
             }
+            console.log(albums);
         }
     }
     
@@ -31,6 +33,7 @@ function getArtist(artistName) {
     xhr.onreadystatechange= function() {
         if(xhr.readyState === 4 && xhr.status === 200){
             var artist = JSON.parse(xhr.responseText);
+            console.log(artist);
             var albums = artist.albums;
             document.getElementById("artistTitle").innerHTML = artist.name;
             clearArtistAlbums();
@@ -42,17 +45,6 @@ function getArtist(artistName) {
     
     xhr.open("GET","PHP/server.php/levykauppa/"+artistName,true);
     xhr.send();
-    /*var cover = "resources/default-album-artwork.png";
-    var albumName = "Demo";
-    var artist = "Stormic";
-    var tracks = [
-        {name:"Nyt Masentaa",link:"../albums/Stormic - demo/original/01. Nyt Masentaa.mp3", duration: "04:18"},
-        {name:"Ralli",link:"../albums/Stormic - demo/original/02. Ralli.mp3", duration: "03:07"},
-        {name:"Survive the Night",link:"../albums/Stormic - demo/original/03. Survive the Night.mp3", duration: "04:22"},
-        {name:"Tearless",link:"../albums/Stormic - demo/original/04. Tearless.mp3", duration: "04:06"}
-    ];*/
-    //clearArtistAlbums();
-    //addAlbum(albumName,artist,cover,tracks, true);
 }
 
 //Adds the album(div) into either the album or the artist's page
@@ -95,13 +87,14 @@ function addAlbum(albumName, artistName, coverLink, trackArray, toArtistPage){
         if(this.value !== "default"){
             var id = this.value;
             var mp3link = document.getElementById(id).getAttribute("data-link");
-            var oldAudio = document.getElementById(albumName).parentNode;
-            var source = document.getElementById(albumName);
+            var oldAudio = document.getElementById(nameString).parentNode;
+            var source = document.getElementById(nameString);
             var newAudio = document.createElement("audio");
             newAudio.setAttribute("controls","");
             source.setAttribute("src",mp3link);
             newAudio.appendChild(source);
             oldAudio.parentNode.replaceChild(newAudio,oldAudio);
+            console.log(source.parentNode.parentNode);
             
             var durationElement = document.getElementById(albumName+"duration");
             durationElement.innerHTML = document.getElementById(id).getAttribute("data-duration");
@@ -112,7 +105,6 @@ function addAlbum(albumName, artistName, coverLink, trackArray, toArtistPage){
     optionDefault.setAttribute("value","default");
     optionDefault.appendChild(document.createTextNode("Select a track"));
     select.appendChild(optionDefault);
-    console.log(trackArray);
     for(var track of trackArray){
         var option = document.createElement("option");
         option.setAttribute("value",track.name);
@@ -137,7 +129,7 @@ function addAlbum(albumName, artistName, coverLink, trackArray, toArtistPage){
     
     var source = document.createElement("source");
     source.setAttribute("type","audio/mpeg");
-    source.setAttribute("id",albumName);
+    source.setAttribute("id",nameString);
     audio.appendChild(source);
     
     infoContainer.appendChild(audio);
@@ -149,6 +141,17 @@ function addAlbum(albumName, artistName, coverLink, trackArray, toArtistPage){
 //Clears all albums from the artist page
 function clearArtistAlbums(){
     var parent = document.getElementById("artist");
+    var children = parent.childNodes;
+    for(child of children){
+        if(child.firstChild != null && child.getAttribute("class") == "innerContainer"){
+            parent.removeChild(child);
+        }
+    }
+}
+
+//Clears all albums from the albums pages
+function clearAlbumsAlbums(){
+    var parent = document.getElementById("albums");
     var children = parent.childNodes;
     for(child of children){
         if(child.firstChild != null && child.getAttribute("class") == "innerContainer"){
