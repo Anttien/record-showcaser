@@ -8,8 +8,8 @@ function getAlbums() {
                 for(var album of albums) {
                     addAlbum(album.name, album.artist_name, album.cover_image, album.tracks);
                 }
+                var albs = document.getElementById("albums");
             }
-            console.log(albums);
         }
     }
     
@@ -33,7 +33,6 @@ function getArtist(artistName) {
     xhr.onreadystatechange= function() {
         if(xhr.readyState === 4 && xhr.status === 200){
             var artist = JSON.parse(xhr.responseText);
-            console.log(artist);
             var albums = artist.albums;
             document.getElementById("artistTitle").innerHTML = artist.name;
             clearArtistAlbums();
@@ -94,7 +93,6 @@ function addAlbum(albumName, artistName, coverLink, trackArray, toArtistPage){
             source.setAttribute("src",mp3link);
             newAudio.appendChild(source);
             oldAudio.parentNode.replaceChild(newAudio,oldAudio);
-            console.log(source.parentNode.parentNode);
             
             var durationElement = document.getElementById(albumName+"duration");
             durationElement.innerHTML = document.getElementById(id).getAttribute("data-duration");
@@ -135,17 +133,21 @@ function addAlbum(albumName, artistName, coverLink, trackArray, toArtistPage){
     infoContainer.appendChild(audio);
     
     albumContainer.appendChild(infoContainer);
-    albums.appendChild(albumContainer); 
+    albums.appendChild(albumContainer);
 }
 
 //Clears all albums from the artist page
 function clearArtistAlbums(){
     var parent = document.getElementById("artist");
     var children = parent.childNodes;
+    var childrenToRemove = [];
     for(child of children){
         if(child.firstChild != null && child.getAttribute("class") == "innerContainer"){
-            parent.removeChild(child);
+            childrenToRemove.push(child);
         }
+    }
+    for(var i = 0; i < childrenToRemove.length; i++){
+        parent.removeChild(childrenToRemove[i]);
     }
 }
 
@@ -153,9 +155,13 @@ function clearArtistAlbums(){
 function clearAlbumsAlbums(){
     var parent = document.getElementById("albums");
     var children = parent.childNodes;
+    var childrenToRemove = [];
     for(child of children){
         if(child.firstChild != null && child.getAttribute("class") == "innerContainer"){
-            parent.removeChild(child);
+            childrenToRemove.push(child);
         }
+    }
+    for(var i = 0; i < childrenToRemove.length; i++){
+        parent.removeChild(childrenToRemove[i]);
     }
 }

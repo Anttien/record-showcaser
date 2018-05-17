@@ -2,8 +2,8 @@
 
 $servername = "localhost";
 $username = "root";
-// $password = "kekko1996";
-$password = "hodorhodor";
+$password = "kekko1996";
+//$password = "hodorhodor";
 $dbname = "levykauppa";
 $conn = null;
 
