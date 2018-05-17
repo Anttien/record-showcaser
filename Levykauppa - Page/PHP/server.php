@@ -129,13 +129,15 @@ if ($resource[0]=="levykauppa") {
 
         // Register artist and album to the database
 
-        $target_path_images = "../resources/albums/".$artist."/".$album."/";
+        $target_path_artistCover = "../resources/albums/".$artist."/";
+        $target_path_albumCover = "../resources/albums/".$artist."/".$album."/";
 
         if (!is_int(getArtistId($artist))) {
-            addArtist($artist);
-            addAlbum($artist, $album, $target_path_images . $_FILES['albumCover']['name']);
-        } elseif (!is_int(getAlbumId($artist, $album))) {
-            addAlbum($artist, $album, $target_path_images . $_FILES['albumCover']['name']);
+            addArtist($artist, $target_path_artistCover . $_FILES['artistCover']['name']);
+        }
+
+        if (!is_int(getAlbumId($artist, $album))) {
+            addAlbum($artist, $album, $target_path_albumCover . $_FILES['albumCover']['name']);
         } else {
             echo "Album already exists";
             return;
@@ -164,7 +166,14 @@ if ($resource[0]=="levykauppa") {
                 }
 
             } else {
-                $target_path = $target_path_images . basename( $file['name']);
+
+                if ($file['name'] == 'albumcover.png') {
+                    $target_path = $target_path_albumCover;
+                } else {
+                    $target_path = $target_path_artistCover;
+                }
+
+                $target_path = $target_path . basename( $file['name']);
                 if(move_uploaded_file($file['tmp_name'], $target_path)) {
                     echo "The file ".  basename( $file['name']). " has been uploaded";
                 } else{
