@@ -4,31 +4,18 @@
     <list default="true" id="bf2df61b-c1bc-4908-860f-e0ee06c23499" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Levykauppa - Page/PHP/databaseconnector.php" afterPath="$PROJECT_DIR$/Levykauppa - Page/PHP/databaseconnector.php" />
-      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/PHP/server.php" afterPath="$PROJECT_DIR$/Levykauppa - Page/PHP/server.php" />
-      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/IA/aaaaaaaa/artistcover.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/IA/aaaaaaaa/original/BEEEEEE.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/IA/aaaaaaaa/stripped/BEEEEEE.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/Stormic/AlbumTest/albumcover.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/Stormic/AlbumTest/artistcover.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/Stormic/AlbumTest/original/TrackTest.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/Stormic/AlbumTest/stripped/TrackTest.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/Stormic/TestAlbum/albumcover.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/Stormic/TestAlbum/artistcover.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/Stormic/TestAlbum/original/TrackOne.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/Stormic/TestAlbum/stripped/TrackOne.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/aaa/aaabbb/artistcover.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/aaa/aaabbb/original/aaa.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/aaa/aaabbb/original/bbb.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/aaa/aaabbb/stripped/aaa.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/aaa/aaabbb/stripped/bbb.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/aaaaa/abc/albumcover.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/aaaaa/abc/artistcover.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/aaaaa/abc/original/lol.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/aaaaa/abc/stripped/lol.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/haapeli/dfhhh/albumcover.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/haapeli/dfhhh/artistcover.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/haapeli/dfhhh/original/Nyt Masentaa.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/haapeli/dfhhh/stripped/Nyt Masentaa.mp3" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/PHP/mp3stripper.php" afterPath="$PROJECT_DIR$/Levykauppa - Page/PHP/mp3stripper.php" />
+      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/IA/IAA/albumcover.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/IA/IAA/original/LOL.mp3" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/IA/IAA/stripped/LOL.mp3" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/IA/artistcover.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/Stormic/Stormic-1/albumcover.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/Stormic/Stormic-1/original/TrackOne.mp3" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/Stormic/Stormic-1/stripped/TrackOne.mp3" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/Stormic/artistcover.png" afterPath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/Stormic/artistcover.png" />
+      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/aaavvv/aaasss/artistcover.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/aaavvv/aaasss/original/sss.mp3" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Levykauppa - Page/resources/albums/aaavvv/aaasss/stripped/sss.mp3" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,12 +40,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="rest_test.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Levykauppa - Page/rest_test.html">
+      <file leaf-file-name="databaseconnector.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Levykauppa - Page/PHP/databaseconnector.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="44" column="50" lean-forward="false" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
-              <folding />
+            <state relative-caret-position="122">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="11" selection-end-column="32" />
+              <folding>
+                <marker date="1526633625978" expanded="true" signature="1551:1734" ph="CREATE TABLE... artist" />
+                <marker date="1526633625978" expanded="true" signature="1760:2032" ph="CREATE TABLE... album" />
+                <marker date="1526633625978" expanded="true" signature="2058:2362" ph="CREATE TABLE... track" />
+                <marker date="1526633625978" expanded="true" signature="3184:3242" ph="INSERT INTO artist... " />
+                <marker date="1526633625978" expanded="true" signature="3716:3751" ph="SELECT * FRO... artist" />
+                <marker date="1526633625978" expanded="true" signature="4439:4521" ph="INSERT INTO album... " />
+                <marker date="1526633625978" expanded="true" signature="5098:5253" ph="SELECT album... album" />
+                <marker date="1526633625978" expanded="true" signature="6041:6136" ph="INSERT INTO track... " />
+                <marker date="1526633625978" expanded="true" signature="7220:7347" ph="SELECT name,... track" />
+                <marker date="1526633625978" expanded="true" signature="8346:8516" ph="SELECT name,... album" />
+                <marker date="1526633625978" expanded="true" signature="9490:9712" ph="SELECT album... album" />
+                <marker date="1526633625978" expanded="true" signature="10759:10871" ph="SELECT name,... artist" />
+                <marker date="1526633625978" expanded="true" signature="11400:11453" ph="SELECT name,... artist" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -66,8 +67,18 @@
       <file leaf-file-name="server.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Levykauppa - Page/PHP/server.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-363">
-              <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+            <state relative-caret-position="-544">
+              <caret line="106" column="51" lean-forward="false" selection-start-line="106" selection-start-column="8" selection-end-line="106" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mp3stripper.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Levykauppa - Page/PHP/mp3stripper.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="51" column="32" lean-forward="false" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -76,8 +87,8 @@
       <file leaf-file-name="AlbumHandling.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Levykauppa - Page/JavaScript/AlbumHandling.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="46" column="13" lean-forward="false" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+            <state relative-caret-position="-270">
+              <caret line="46" column="1" lean-forward="false" selection-start-line="46" selection-start-column="1" selection-end-line="46" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -86,33 +97,19 @@
       <file leaf-file-name="Upload.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Levykauppa - Page/JavaScript/Upload.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="101" column="43" lean-forward="false" selection-start-line="101" selection-start-column="33" selection-end-line="101" selection-end-column="43" />
+            <state relative-caret-position="4131">
+              <caret line="243" column="9" lean-forward="false" selection-start-line="243" selection-start-column="9" selection-end-line="243" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="databaseconnector.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Levykauppa - Page/PHP/databaseconnector.php">
+      <file leaf-file-name="PageHandling.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Levykauppa - Page/JavaScript/PageHandling.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="244" column="101" lean-forward="false" selection-start-line="244" selection-start-column="101" selection-end-line="244" selection-end-column="101" />
-              <folding>
-                <marker date="1526565637282" expanded="true" signature="2622:2805" ph="CREATE TABLE... artist" />
-                <marker date="1526565637282" expanded="true" signature="2831:3103" ph="CREATE TABLE... album" />
-                <marker date="1526565637282" expanded="true" signature="3129:3433" ph="CREATE TABLE... track" />
-                <marker date="1526565637282" expanded="true" signature="3919:3977" ph="INSERT INTO artist... " />
-                <marker date="1526565637282" expanded="true" signature="4453:4488" ph="SELECT * FRO... artist" />
-                <marker date="1526565637282" expanded="true" signature="5176:5258" ph="INSERT INTO album... " />
-                <marker date="1526565637282" expanded="true" signature="5835:5990" ph="SELECT album... album" />
-                <marker date="1526565637282" expanded="true" signature="6778:6873" ph="INSERT INTO track... " />
-                <marker date="1526565637282" expanded="true" signature="7956:8083" ph="SELECT name,... track" />
-                <marker date="1526565637282" expanded="true" signature="9082:9252" ph="SELECT name,... album" />
-                <marker date="1526565637282" expanded="true" signature="10226:10448" ph="SELECT album... album" />
-                <marker date="1526565637282" expanded="true" signature="11495:11607" ph="SELECT name,... artist" />
-                <marker date="1526565637282" expanded="true" signature="12136:12189" ph="SELECT name,... artist" />
-              </folding>
+            <state relative-caret-position="289">
+              <caret line="17" column="4" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -120,7 +117,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Levykauppa - Page/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
+            <state relative-caret-position="600">
               <caret line="60" column="87" lean-forward="false" selection-start-line="60" selection-start-column="87" selection-end-line="60" selection-end-column="87" />
               <folding />
             </state>
@@ -158,6 +155,7 @@
       <find>please enter</find>
       <find>addAlbum</find>
       <find>$target_path_images</find>
+      <find>addtra</find>
     </findStrings>
     <replaceStrings>
       <replace>stripped_mp3</replace>
@@ -182,13 +180,13 @@
         <option value="$PROJECT_DIR$/server.php" />
         <option value="$PROJECT_DIR$/Levykauppa - Page/JavaScript/ArtistHandling.js" />
         <option value="$PROJECT_DIR$/Levykauppa - Page/rest_test.html" />
-        <option value="$PROJECT_DIR$/Levykauppa - Page/PHP/mp3stripper.php" />
         <option value="$PROJECT_DIR$/Levykauppa - Page/PHP/mp3file.php" />
         <option value="$PROJECT_DIR$/Levykauppa - Page/.htaccess" />
         <option value="$PROJECT_DIR$/Levykauppa - Page/JavaScript/AlbumHandling.js" />
         <option value="$PROJECT_DIR$/Levykauppa - Page/index.html" />
-        <option value="$PROJECT_DIR$/Levykauppa - Page/JavaScript/Upload.js" />
         <option value="$PROJECT_DIR$/Levykauppa - Page/PHP/server.php" />
+        <option value="$PROJECT_DIR$/Levykauppa - Page/JavaScript/Upload.js" />
+        <option value="$PROJECT_DIR$/Levykauppa - Page/PHP/mp3stripper.php" />
         <option value="$PROJECT_DIR$/Levykauppa - Page/PHP/databaseconnector.php" />
       </list>
     </option>
@@ -203,7 +201,7 @@
     <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="88" />
     <option name="y" value="105" />
     <option name="width" value="1067" />
@@ -224,6 +222,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -258,7 +257,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -311,20 +309,21 @@
       <workItem from="1525269422757" duration="1964000" />
       <workItem from="1525760709478" duration="10565000" />
       <workItem from="1526373962953" duration="15189000" />
-      <workItem from="1526562628391" duration="2469000" />
+      <workItem from="1526562628391" duration="2607000" />
+      <workItem from="1526625822040" duration="5054000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80263000" />
+    <option name="totallyTimeSpent" value="85455000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28971255" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29425114" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -335,7 +334,6 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -354,14 +352,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Levykauppa - Page/PHP/server.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mp3stripper.php" />
     <entry file="file://$PROJECT_DIR$/mp3file.php" />
     <entry file="file://$PROJECT_DIR$/server.php" />
@@ -439,22 +429,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Levykauppa - Page/PHP/mp3stripper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="47" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Levykauppa - Page/rest_test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="44" column="50" lean-forward="false" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Levykauppa - Page/JavaScript/ArtistHandling.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -462,56 +436,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Levykauppa - Page/JavaScript/AlbumHandling.js">
+    <entry file="file://$PROJECT_DIR$/Levykauppa - Page/rest_test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="46" column="13" lean-forward="false" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+        <state relative-caret-position="0">
+          <caret line="44" column="50" lean-forward="false" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Levykauppa - Page/JavaScript/Upload.js">
+    <entry file="file://$PROJECT_DIR$/Levykauppa - Page/JavaScript/PageHandling.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="101" column="43" lean-forward="false" selection-start-line="101" selection-start-column="33" selection-end-line="101" selection-end-column="43" />
+        <state relative-caret-position="289">
+          <caret line="17" column="4" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Levykauppa - Page/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
+        <state relative-caret-position="600">
           <caret line="60" column="87" lean-forward="false" selection-start-line="60" selection-start-column="87" selection-end-line="60" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Levykauppa - Page/JavaScript/Upload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4131">
+          <caret line="243" column="9" lean-forward="false" selection-start-line="243" selection-start-column="9" selection-end-line="243" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Levykauppa - Page/JavaScript/AlbumHandling.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-270">
+          <caret line="46" column="1" lean-forward="false" selection-start-line="46" selection-start-column="1" selection-end-line="46" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Levykauppa - Page/PHP/server.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-363">
-          <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+        <state relative-caret-position="-544">
+          <caret line="106" column="51" lean-forward="false" selection-start-line="106" selection-start-column="8" selection-end-line="106" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Levykauppa - Page/PHP/mp3stripper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="51" column="32" lean-forward="false" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Levykauppa - Page/PHP/databaseconnector.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="244" column="101" lean-forward="false" selection-start-line="244" selection-start-column="101" selection-end-line="244" selection-end-column="101" />
+        <state relative-caret-position="122">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="11" selection-end-column="32" />
           <folding>
-            <marker date="1526565637282" expanded="true" signature="2622:2805" ph="CREATE TABLE... artist" />
-            <marker date="1526565637282" expanded="true" signature="2831:3103" ph="CREATE TABLE... album" />
-            <marker date="1526565637282" expanded="true" signature="3129:3433" ph="CREATE TABLE... track" />
-            <marker date="1526565637282" expanded="true" signature="3919:3977" ph="INSERT INTO artist... " />
-            <marker date="1526565637282" expanded="true" signature="4453:4488" ph="SELECT * FRO... artist" />
-            <marker date="1526565637282" expanded="true" signature="5176:5258" ph="INSERT INTO album... " />
-            <marker date="1526565637282" expanded="true" signature="5835:5990" ph="SELECT album... album" />
-            <marker date="1526565637282" expanded="true" signature="6778:6873" ph="INSERT INTO track... " />
-            <marker date="1526565637282" expanded="true" signature="7956:8083" ph="SELECT name,... track" />
-            <marker date="1526565637282" expanded="true" signature="9082:9252" ph="SELECT name,... album" />
-            <marker date="1526565637282" expanded="true" signature="10226:10448" ph="SELECT album... album" />
-            <marker date="1526565637282" expanded="true" signature="11495:11607" ph="SELECT name,... artist" />
-            <marker date="1526565637282" expanded="true" signature="12136:12189" ph="SELECT name,... artist" />
+            <marker date="1526633625978" expanded="true" signature="1551:1734" ph="CREATE TABLE... artist" />
+            <marker date="1526633625978" expanded="true" signature="1760:2032" ph="CREATE TABLE... album" />
+            <marker date="1526633625978" expanded="true" signature="2058:2362" ph="CREATE TABLE... track" />
+            <marker date="1526633625978" expanded="true" signature="3184:3242" ph="INSERT INTO artist... " />
+            <marker date="1526633625978" expanded="true" signature="3716:3751" ph="SELECT * FRO... artist" />
+            <marker date="1526633625978" expanded="true" signature="4439:4521" ph="INSERT INTO album... " />
+            <marker date="1526633625978" expanded="true" signature="5098:5253" ph="SELECT album... album" />
+            <marker date="1526633625978" expanded="true" signature="6041:6136" ph="INSERT INTO track... " />
+            <marker date="1526633625978" expanded="true" signature="7220:7347" ph="SELECT name,... track" />
+            <marker date="1526633625978" expanded="true" signature="8346:8516" ph="SELECT name,... album" />
+            <marker date="1526633625978" expanded="true" signature="9490:9712" ph="SELECT album... album" />
+            <marker date="1526633625978" expanded="true" signature="10759:10871" ph="SELECT name,... artist" />
+            <marker date="1526633625978" expanded="true" signature="11400:11453" ph="SELECT name,... artist" />
           </folding>
         </state>
       </provider>

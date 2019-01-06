@@ -4,9 +4,19 @@
 include("phpmp3.php"); // For stripping the mp3
 include("mp3file.php"); // For calculating the duration
 
+/**
+ * Class mp3stripper
+ *
+ * Makes shortened versions of the mp3's and stores them to an appropriate folder.
+ */
 class mp3stripper {
 
-
+    /**
+     * Strips the mp3's of an album.
+     * @param $artist the name of the artist
+     * @param $album the name of the album
+     * @return array a filelist of files in the folder containing the original mp3s.
+     */
     public function stripmp3($artist, $album) {
 
         // The root directory for the album
@@ -49,13 +59,13 @@ class mp3stripper {
 
             /*
              * Set $strip_length and $strip_start.
-             * If $duration is 20 seconds or less, $strip_length will be half of the duration.
+             * If $duration is 30 seconds or less, $strip_length will be half of the duration.
             */
-            if ($duration <= 20) {
+            if ($duration <= 30) {
                 $strip_length = $duration / 2;
                 $strip_start = 0;
             } else {
-                $strip_length = 10;
+                $strip_length = 15;
                 $strip_start = $duration / 2;
             }
 

@@ -7,7 +7,10 @@ $mp3stripper = new mp3stripper();
 
 # URI parser helper functions
 # ---------------------------
-
+/**
+ * Parses the URI
+ * @return array numerically indexed array of URI parts
+ */
 function getResource() {
     # returns numerically indexed array of URI parts
     $resource_string = $_SERVER['REQUEST_URI'];
@@ -16,7 +19,7 @@ function getResource() {
         $resource_string = substr($resource_string, 0, strpos($resource_string, '?'));
     }
 
-    $resource = array();
+//    $resource = array();
     $resource = explode('/', $resource_string);
     array_shift($resource);
     array_shift($resource);
@@ -25,6 +28,10 @@ function getResource() {
     return $resource;
 }
 
+/**
+ * Parses the URI for parameters
+ * @return array an associative array containing the parameters
+ */
 function getParameters() {
     # returns an associative array containing the parameters
     $resource = $_SERVER['REQUEST_URI'];
@@ -43,6 +50,9 @@ function getParameters() {
     return $param_array;
 }
 
+/**
+ * @return mixed a string containing the HTTP method
+ */
 function getMethod() {
     # returns a string containing the HTTP method
     $method = $_SERVER['REQUEST_METHOD'];
@@ -58,9 +68,6 @@ $parameters = getParameters();
 # Redirect to appropriate handlers.
 
 if ($resource[0]=="levykauppa") {
-
-
-
     /*
      * Returns all artists in the database, in ascending order by name
      * Example: 'server.php/levykauppa/artists'

@@ -1,38 +1,29 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "kekko1996";
-//$password = "hodorhodor";
-$dbname = "levykauppa";
 $conn = null;
 
-createConnection();
+initializeDatabaseUserInfo();
 
-//initializeDataBase();
-//addArtist("Stormic", null,"www.suomi24.fi");
-//addArtist("IA");
-//addAlbum('Stormic', 'Justice For All', '2007');
-//addAlbum('Stormic', 'Justice For All 2', '2009');
-//addAlbum('IA', 'Justice For All', '2009');
-//getAlbumId('IA', "Justice For All");
-//addTrack("Stormic", 'Justice For All', "ykkonen", "00:90");
-//addTrack("Stormic", "Justice For All", "dfs", "00:90");
-//addTrack("Stormic", "Justice For All", "sdfsdg", "00:90");
-//addTrack("Stormic", "Justice For All", "aasdfsdf", "00:90");
-//addTrack("Stormic", "Justice For All", "dfhdf", "00:90");
-//addTrack("Stormic", "Justice For All", "sdfs", "00:90");
-//addTrack("Stormic", "Justice For All", "ssss", "00:90");
-//addTrack("Stormic", "Justice For All", "ssss", "00:90");
-//addTrack("Stormic", "Justice For All", "ssss", "00:90");
-//addTrack("Stormic", "Justice For All", "ssss", "00:90");
-//addTrack("Stormic", "Justice For All", "ssss", "00:90");
-//addTrack("Stormic", "Justice For All", "ssss", "00:90");
-//addTrack("Stormic", "Justice For All", "ssss", "00:90");
-//getAlbumsOfArtist("Stormic");
-//getTracksOfAlbum('Stormic', 'Justice For All');
-//getArtists();
 /*
+ * Run these if you need to reset the database
+ */
+//initializeDataBase();
+//removeResources("../resources/albums/");
+//mkdir("../resources/albums/");
+
+/**
+ * Read user info from an .ini file
+ */
+function initializeDatabaseUserInfo() {
+    global $servername, $username, $password, $dbname;
+    $userinfo = parse_ini_file("../userinfo.ini");
+    $servername = $userinfo["servername"];
+    $username = $userinfo["username"];
+    $password = $userinfo["password"];
+    $dbname = $userinfo["dbname"];
+}
+
+/**
  * Creates the connection to the database.
  */
 function createConnection() {
@@ -45,8 +36,8 @@ function createConnection() {
     }
 }
 
-/*
- * Creates the empty database.
+/**
+ * Creates an empty database.
  */
 function initializeDataBase() {
     createConnection();
@@ -109,8 +100,8 @@ function initializeDataBase() {
     (
       id INT NOT NULL AUTO_INCREMENT,
       name VARCHAR(75) NOT NULL,
-      original_mp3 VARCHAR(75),
-      stripped_mp3 VARCHAR(75),
+      original_mp3 VARCHAR(275),
+      stripped_mp3 VARCHAR(275),
       duration VARCHAR(8) NOT NULL,
       album_id INT NOT NULL,
       PRIMARY KEY (id),
@@ -131,7 +122,31 @@ function initializeDataBase() {
     $conn->close();
 }
 
+/**
+ * Removes a directory from file system
+ * @param $target the directory to remove
+ */
+function removeResources($target)
+{
+    if (is_dir($target)) {
+        $files = glob($target . '*', GLOB_MARK); //GLOB_MARK adds a slash to directories returned
 
+        foreach ($files as $file) {
+            removeResources($file);
+        }
+
+        rmdir($target);
+    } elseif (is_file($target)) {
+        unlink($target);
+    }
+}
+
+/**
+ * Add an artist to the database.
+ * @param $name the name of the artist
+ * @param null $logo (optional) the location of the logo image file
+ * @param null $homepage (optional) URL to artist's homepage
+ */
 function addArtist($name, $logo=null, $homepage=null) {
     createConnection();
     global $conn;
@@ -150,10 +165,13 @@ function addArtist($name, $logo=null, $homepage=null) {
     $stmt->execute();
     $stmt->close();
     $conn->close();
-
-
 }
 
+/**
+ * Get the ID of the artist from the database.
+ * @param $name the name of the artist
+ * @return string the ID of the artist
+ */
 function getArtistId($name) {
     createConnection();
     global $conn;
@@ -181,6 +199,13 @@ function getArtistId($name) {
     return $ids[0];
 }
 
+/**
+ * Add an album for an artist.
+ * @param $artist_name the name of the artist
+ * @param $album_name the name of the album
+ * @param null $cover_image (optional) the location of the cover image file
+ * @param int $release_year (optional) the release year of the album
+ */
 function addAlbum($artist_name, $album_name, $cover_image=null, $release_year=0) {
     $artist_id = getArtistId($artist_name);
     createConnection();
@@ -202,6 +227,12 @@ function addAlbum($artist_name, $album_name, $cover_image=null, $release_year=0)
     $conn->close();
 }
 
+/**
+ * Get the ID of the album from the database.
+ * @param $artist_name the name of the artist
+ * @param $album_name the name of the album
+ * @return string the ID of the album
+ */
 function getAlbumId($artist_name, $album_name) {
     $artist_id = getArtistId($artist_name);
     createConnection();
@@ -233,6 +264,15 @@ function getAlbumId($artist_name, $album_name) {
     return $ids[0];
 }
 
+/**
+ * Add tracks to the album.
+ * @param $artist_name the name of the artist
+ * @param $album_name the name of the album
+ * @param $track_name the name of the track
+ * @param $duration the duration of the track in format mm:ss
+ * @param null $original_mp3 (optional) the location to the original mp3 file
+ * @param null $stripped_mp3 (optional) the location to the stripped mp3 file
+ */
 function addTrack($artist_name, $album_name, $track_name, $duration, $original_mp3=null, $stripped_mp3=null) {
     $album_id = getAlbumId($artist_name, $album_name);
     createConnection();
@@ -242,7 +282,7 @@ function addTrack($artist_name, $album_name, $track_name, $duration, $original_m
     $stmt = $conn->prepare("INSERT INTO track (name, original_mp3, stripped_mp3, duration, album_id) VALUES (?, ?, ?, ?, ?)");
     if ($stmt->bind_param("ssssi", $track_name, $original_mp3, $stripped_mp3, $duration, $album_id)) {
         echo('<br>');
-        echo("Added track '" . $track_name . "' of the album '" . $album_name . " to the database.");
+        echo("Added track '" . $track_name . "' of the album '" . $album_name . "' to the database.");
     } else {
         echo('<br>');
         echo("Error: album '" . $track_name . "' of the album '" . $album_name . "' wasn't added to the database.");
@@ -254,6 +294,12 @@ function addTrack($artist_name, $album_name, $track_name, $duration, $original_m
     $conn->close();
 }
 
+/**
+ * Add multiple tracks to an album at once.
+ * @param $artist_name the name of the artis
+ * @param $album_name the name of the album
+ * @param $tracks an array consisting of the tracks. Must contain (in order) name [name], duration [duration], link to original mp3 file [original_mp3] and link to stripped mp3 file [stripped_mp3].
+ */
 function addAllTracks($artist_name, $album_name, $tracks) {
     foreach ($tracks as $track) {
         addTrack($artist_name,
@@ -265,6 +311,12 @@ function addAllTracks($artist_name, $album_name, $tracks) {
     }
 }
 
+/**
+ * Get all tracks of an album.
+ * @param $artist_name the name of the artist
+ * @param $album_name the name of the album
+ * @return array|string an array consisting of the name of the track [name], location of stripped mp3 [stripped_mp3] and the duration [duration] (in that order)
+ */
 function getTracksOfAlbum($artist_name, $album_name) {
     $album_id = getAlbumId($artist_name, $album_name);
     if (!is_int($album_id)) {
@@ -287,9 +339,6 @@ function getTracksOfAlbum($artist_name, $album_name) {
     if($result->num_rows === 0) return ("No tracks found for album '" . $album_name . "'.");
     while($row = $result->fetch_assoc()) {
         array_push($tracks, $row);
-//        $tracks[$row['id']]['name'] = $row['name'];
-//        $tracks[$row['id']]['stripped_mp3'] = $row['stripped_mp3'];
-//        $tracks[$row['id']]['duration'] = $row['duration'];
     }
     $stmt->close();
     $conn->close();
@@ -303,6 +352,12 @@ function getTracksOfAlbum($artist_name, $album_name) {
 
 }
 
+/**
+ * Get the albums of an artist.
+ * @param $artist_name the name of the artist
+ * @param string $order_by sorting order. ('release_year' or 'name')
+ * @return array an array of the artist's albums
+ */
 function getAlbumsOfArtist($artist_name, $order_by = 'release_year') {
     $artist_id = getArtistId($artist_name);
     $albums = array();
@@ -328,10 +383,6 @@ function getAlbumsOfArtist($artist_name, $order_by = 'release_year') {
     while($row = $result->fetch_assoc()) {
         $row['tracks'] = getTracksOfAlbum($artist_name, $row['name']);
         array_push($albums, $row);
-
-//        $albums[$row['id']]['name'] = $row['name'];
-//        $albums[$row['id']]['release_year'] = $row['release_year'];
-//        $albums[$row['id']]['cover_image'] = $row['cover_image'];
     }
 
 
@@ -343,6 +394,11 @@ function getAlbumsOfArtist($artist_name, $order_by = 'release_year') {
     return $albums;
 }
 
+/**
+ * Get all albums
+ * @param $order_by sorting order. ('alnum.name', 'release_year' or 'artist_name')
+ * @return array|string an array of the albums
+ */
 function getAlbums($order_by = release_year) {
 
     $albums = array();
@@ -386,6 +442,11 @@ function getAlbums($order_by = release_year) {
     return $albums;
 }
 
+/**
+ * Get all information of an artist.
+ * @param $artist_name the name of the artist
+ * @return array|string all data in an array
+ */
 function getArtist($artist_name) {
     $artist = array();
     createConnection();
@@ -412,6 +473,10 @@ function getArtist($artist_name) {
     return $artist;
 }
 
+/**
+ * Get all artists and their info.
+ * @return array an array consisting of all artists and their albums
+ */
 function getArtists() {
     $artists = array();
     createConnection();

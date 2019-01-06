@@ -78,6 +78,8 @@ function addAlbumNamer(isNewArtist) {
         var form = document.forms.namedItem("uploadAlbum");
             form.addEventListener('submit', function(ev) {
 
+                ev.preventDefault();
+
                 var artistInfo = validateArtist();
                 var artistName = artistInfo.name;
                 var isNew = artistInfo.isNew;
@@ -100,7 +102,10 @@ function addAlbumNamer(isNewArtist) {
                 formData.append("artist", artistName);
                 formData.append("album", albumName);
                 formData.append("albumCover", covers.albumCover, "albumcover.png");
-                formData.append("artistCover", covers.artistCover, "artistcover.png");
+                if (covers.artistCover) {
+                    formData.append("artistCover", covers.artistCover, "artistcover.png");
+                }
+                
 
                 console.log(formData);
 
@@ -117,7 +122,7 @@ function addAlbumNamer(isNewArtist) {
                 xhr.open("POST", "PHP/server.php/levykauppa", true);
                 xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
                 xhr.send(formData);
-                ev.preventDefault();
+
         }, false);
 
     var uploadButtonShowing = false;
@@ -265,7 +270,8 @@ function validateTracks(){
         }
         
         var trackFile = trackFileList[0];
-        if(trackFile.type !== "audio/mp3"){
+        // if(trackFile.type !== "audio/mp3"){
+        if(trackFile.type !== "audio/mp3" && trackFile.type !== "audio/mpeg"){
             alert("Invalid file type (must be .mp3)");
             return false;
         }
