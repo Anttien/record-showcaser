@@ -4,3 +4,6 @@ The idea of this school project was to create a RESTful single-page application 
 
 Frontend: HTML, CSS, JavaScript  
 Backend: PHP, MariaDB
+
+## Authors:
+Antti Nieminen and Francesco de Lorenzo.
